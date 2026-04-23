@@ -131,6 +131,34 @@ function HomePage() {
         <div className="relative h-1 w-full bg-[var(--gradient-gold)]" />
       </section>
 
+      {/* Working hours & location quick strip */}
+      <section className="border-b border-border bg-card">
+        <div className="mx-auto grid max-w-7xl gap-4 px-4 py-6 sm:grid-cols-2 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-4 rounded-xl border border-border bg-primary-soft/40 p-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+              <Clock className="h-6 w-6" />
+            </div>
+            <div>
+              <div className="text-xs font-bold text-muted-foreground">أوقات العمل</div>
+              <div className="text-sm font-bold text-foreground sm:text-base">
+                من الأحد إلى الخميس — 8:00 صباحاً إلى 3:00 عصراً
+              </div>
+            </div>
+          </div>
+          <div className="flex items-center gap-4 rounded-xl border border-border bg-primary-soft/40 p-4">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground">
+              <MapPin className="h-6 w-6" />
+            </div>
+            <div>
+              <div className="text-xs font-bold text-muted-foreground">الموقع</div>
+              <div className="text-sm font-bold text-foreground sm:text-base">
+                الظهرة — طرابلس، بجانب فندق الودان
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Core Services */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
