@@ -27,7 +27,6 @@ export function SiteFooter() {
             <li><Link to="/about" className="text-primary-foreground/80 hover:text-gold">من نحن</Link></li>
             <li><Link to="/departments" className="text-primary-foreground/80 hover:text-gold">الإدارات والمكاتب</Link></li>
             <li><Link to="/services" className="text-primary-foreground/80 hover:text-gold">الخدمات</Link></li>
-            <li><Link to="/news" className="text-primary-foreground/80 hover:text-gold">الأخبار</Link></li>
             <li><Link to="/contact" className="text-primary-foreground/80 hover:text-gold">اتصل بنا</Link></li>
           </ul>
         </div>

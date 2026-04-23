@@ -1,36 +1,26 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
-import { CheckCircle2, Target, Eye, Building } from "lucide-react";
+import { CheckCircle2, Target, Eye, Award, Gavel, ShieldCheck } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "من نحن | مركز الخبرة القضائية والبحوث" },
-      { name: "description", content: "تعرف على مركز الخبرة القضائية والبحوث وأهدافه وهيكله التنظيمي ودوره في خدمة العدالة." },
+      { name: "description", content: "مركز الخبرة القضائية والبحوث - جهة عامة تتبع الدولة الليبية، مختصّة حصرياً بأعمال الخبرة القضائية والطب الشرعي." },
       { property: "og:title", content: "من نحن - مركز الخبرة القضائية والبحوث" },
-      { property: "og:description", content: "تعرف على مركز الخبرة القضائية والبحوث وأهدافه وهيكله التنظيمي." },
+      { property: "og:description", content: "الجهة الرسمية الوحيدة المعتمدة لدى المحاكم والنيابة العامة في ليبيا." },
     ],
   }),
   component: AboutPage,
 });
 
-const goals = [
-  "تقديم تقارير الخبرة القضائية بأعلى معايير الدقة والحيادية.",
-  "إجراء التحاليل العلمية والمختبرية المتخصصة للجهات القضائية والرسمية.",
-  "تنفيذ أعمال الترجمة المعتمدة وتصديق الوثائق للسفارات والجهات الرسمية.",
-  "إعداد البحوث والدراسات في مجالات الطب الشرعي والعلوم الجنائية.",
-  "تطوير الكوادر الوطنية في تخصصات الخبرة القضائية المختلفة.",
-  "التعاون مع الجهات الأكاديمية والبحثية محلياً ودولياً.",
-];
-
-const orgUnits = [
-  { title: "رئيس المركز", level: 1 },
-  { title: "مكتب البحوث والدراسات", level: 2 },
-  { title: "إدارة الخبرة الهندسية والحسابية", level: 2 },
-  { title: "إدارة الطب الشرعي والتحاليل", level: 2 },
-  { title: "إدارة الخبرة الجنائية", level: 2 },
-  { title: "إدارة الفروع", level: 2 },
+const values = [
+  "الالتزام بالقانون",
+  "الحياد والاستقلالية",
+  "الدقة العلمية",
+  "المسؤولية المهنية",
+  "سرّية المعلومات",
 ];
 
 function AboutPage() {
@@ -38,91 +28,100 @@ function AboutPage() {
     <>
       <PageHeader
         eyebrow="من نحن"
-        title="مركزٌ علميٌ متخصصٌ في خدمة العدالة"
-        subtitle="نقدم تقارير الخبرة القضائية والتحاليل العلمية بحياديةٍ ودقةٍ علمية، بفضل كوادر وطنية مؤهلة وتجهيزات حديثة."
+        title="جهةٌ رسميةٌ تتبع الدولة الليبية"
+        subtitle="مركز الخبرة القضائية والبحوث — المرجع الرسمي في مجالات الخبرة القضائية والطب الشرعي والتحاليل."
         image={aboutHero}
       />
 
+      {/* Definition */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <h2 className="text-2xl font-bold text-foreground sm:text-3xl">تعريف بالمركز</h2>
-            <div className="mt-5 space-y-4 text-base leading-relaxed text-muted-foreground">
-              <p>
-                مركز الخبرة القضائية والبحوث هو جهة علمية متخصصة تعمل تحت مظلة الجهات السيادية المختصة،
-                ويُعنى بتقديم تقارير الخبرة القضائية والتحاليل العلمية في القضايا المنظورة أمام المحاكم
-                والجهات التحقيقية والرقابية.
-              </p>
-              <p>
-                يضم المركز نخبةً من الخبراء والاستشاريين في مختلف التخصصات الفنية والطبية والهندسية والحسابية
-                والكيميائية والجنائية، ويعتمد في أعماله على أحدث التقنيات والمختبرات المجهزة بأرقى المعدات
-                المعتمدة دولياً.
-              </p>
-              <p>
-                ويسعى المركز إلى تطوير منظومة الخبرة القضائية في البلاد، من خلال إعداد البحوث والدراسات،
-                وتأهيل الكوادر، والتعاون مع الجهات العلمية والأكاديمية على المستويين المحلي والدولي.
-              </p>
-            </div>
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-2xl font-bold text-foreground sm:text-3xl">تعريف بالمركز</h2>
+          <div className="mt-3 h-1 w-20 rounded-full bg-gold" />
+          <div className="mt-6 space-y-5 text-base leading-loose text-muted-foreground">
+            <p>
+              مركز الخبرة القضائية والبحوث هو جهةٌ عامةٌ تتبع الدولة الليبية، ومختصٌّ حصرياً بتقديم
+              أعمال الخبرة القضائية والطب الشرعي وفقاً للتشريعات والقوانين النافذة في ليبيا.
+            </p>
+            <p>
+              يُعدّ المركز الجهة الفنية المعتمدة لدى المحاكم والنيابة العامة، ويتولّى تنفيذ المأموريات
+              القضائية وإعداد التقارير الفنية في مختلف التخصصات، بما يضمن تحقيق العدالة ودعم القضاء
+              بالأدلة العلمية الدقيقة.
+            </p>
+            <p>
+              يمارس المركز اختصاصاته في نطاق الدولة الليبية، ويُعتبر المرجع الرسمي في مجالات الخبرة
+              القضائية والطب الشرعي والتحاليل.
+            </p>
           </div>
+        </div>
+      </section>
 
-          <div className="space-y-4">
-            <div className="rounded-2xl border border-border bg-primary-soft/50 p-6">
-              <Target className="h-8 w-8 text-primary" />
-              <h3 className="mt-3 text-lg font-bold text-foreground">رسالتنا</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                تقديم خدمات الخبرة القضائية والتحاليل العلمية بأعلى معايير الجودة والمصداقية،
-                دعماً للعدالة وخدمةً للمجتمع.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)]">
-              <Eye className="h-8 w-8 text-gold" />
-              <h3 className="mt-3 text-lg font-bold text-foreground">رؤيتنا</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                أن نكون المرجع الأول والأكثر موثوقية في مجال الخبرة القضائية والبحوث الجنائية إقليمياً.
+      {/* Exclusive Authority Statement */}
+      <section className="bg-[var(--gradient-hero)] py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl border border-gold/40 bg-primary-foreground/5 p-8 backdrop-blur-sm sm:p-12">
+            <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
+            <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full bg-gold/15 blur-3xl" />
+            <div className="relative flex flex-col items-center gap-5 text-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold text-gold-foreground shadow-lg">
+                <Gavel className="h-8 w-8" />
+              </div>
+              <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-bold text-gold">
+                <ShieldCheck className="h-3.5 w-3.5" /> الاختصاص الحصري
+              </div>
+              <p className="max-w-3xl text-lg font-semibold leading-relaxed text-primary-foreground sm:text-xl">
+                يختصّ المركز دون غيره في ليبيا بتنفيذ أعمال الخبرة القضائية والطب الشرعي،
+                ويُعدّ الجهة الوحيدة المخوّلة قانوناً بتقديم هذه الخدمات للجهات القضائية.
               </p>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Mission / Vision */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="grid gap-5 lg:grid-cols-2">
+          <div className="rounded-2xl border border-border bg-primary-soft/50 p-7">
+            <Target className="h-9 w-9 text-primary" />
+            <h3 className="mt-4 text-xl font-bold text-foreground">رسالتنا</h3>
+            <div className="mt-2 h-1 w-12 rounded-full bg-gold" />
+            <p className="mt-4 text-sm leading-loose text-muted-foreground">
+              تقديم خدمات الخبرة القضائية والطب الشرعي وفق أعلى المعايير الفنية والعلمية،
+              دعماً للسلطة القضائية، وضماناً لتحقيق العدالة وفقاً للقانون.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-card)]">
+            <Eye className="h-9 w-9 text-gold" />
+            <h3 className="mt-4 text-xl font-bold text-foreground">رؤيتنا</h3>
+            <div className="mt-2 h-1 w-12 rounded-full bg-gold" />
+            <p className="mt-4 text-sm leading-loose text-muted-foreground">
+              تعزيز مكانة المركز كمرجعيةٍ وطنيةٍ رائدةٍ في مجالات الخبرة القضائية والطب الشرعي،
+              والارتقاء بجودة الأداء الفني بما يواكب التطور العلمي.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
       <section className="bg-primary-soft/40 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <div className="text-sm font-bold uppercase tracking-wider text-primary">أهدافنا</div>
-            <h2 className="mt-2 text-3xl font-bold text-foreground">الأهداف الإستراتيجية للمركز</h2>
+            <Award className="mx-auto h-10 w-10 text-primary" />
+            <div className="mt-3 text-sm font-bold uppercase tracking-wider text-primary">قيمنا</div>
+            <h2 className="mt-2 text-3xl font-bold text-foreground">المبادئ التي يقوم عليها عمل المركز</h2>
+            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
           </div>
-          <ul className="grid gap-4 sm:grid-cols-2">
-            {goals.map((g) => (
-              <li key={g} className="flex items-start gap-3 rounded-xl border border-border bg-card p-5 shadow-[var(--shadow-card)]">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-gold" />
-                <span className="text-sm leading-relaxed text-foreground">{g}</span>
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+            {values.map((v) => (
+              <li
+                key={v}
+                className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-5 text-center shadow-[var(--shadow-card)]"
+              >
+                <CheckCircle2 className="h-7 w-7 text-gold" />
+                <span className="text-sm font-bold leading-relaxed text-foreground">{v}</span>
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-10 text-center">
-          <div className="text-sm font-bold uppercase tracking-wider text-primary">الهيكل التنظيمي</div>
-          <h2 className="mt-2 text-3xl font-bold text-foreground">نظرة عامة على هيكل المركز</h2>
-          <p className="mt-3 text-muted-foreground">يتكون المركز من رئاسة المركز، ومكتب البحوث والدراسات، وأربع إدارات فنية متخصصة.</p>
-        </div>
-
-        <div className="space-y-3">
-          {orgUnits.map((u) => (
-            <div
-              key={u.title}
-              className={`flex items-center gap-3 rounded-xl border border-border p-5 shadow-[var(--shadow-card)] ${
-                u.level === 1 ? "bg-primary text-primary-foreground" : "mr-0 bg-card sm:mr-12"
-              }`}
-            >
-              <div className={`flex h-10 w-10 items-center justify-center rounded-lg ${u.level === 1 ? "bg-gold text-gold-foreground" : "bg-primary-soft text-primary"}`}>
-                <Building className="h-5 w-5" />
-              </div>
-              <div className="font-bold">{u.title}</div>
-            </div>
-          ))}
         </div>
       </section>
     </>

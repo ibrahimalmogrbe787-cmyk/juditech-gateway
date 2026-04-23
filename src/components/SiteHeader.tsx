@@ -8,7 +8,6 @@ const nav = [
   { to: "/about", label: "من نحن" },
   { to: "/departments", label: "الإدارات والمكاتب" },
   { to: "/services", label: "الخدمات" },
-  { to: "/news", label: "الأخبار" },
   { to: "/contact", label: "اتصل بنا" },
 ] as const;
 
