@@ -7,15 +7,12 @@ import {
   TestTubes,
   ArrowLeft,
   ShieldCheck,
-  Target,
-  Eye,
-  Award,
-  Gauge,
   Clock,
-  GraduationCap,
-  Lock,
   Building2,
   MapPin,
+  BookOpen,
+  Sparkles,
+  Gavel,
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
 import logo from "@/assets/logo.jpeg";
@@ -24,9 +21,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "الرئيسية | مركز الخبرة القضائية والبحوث" },
-      { name: "description", content: "جهة علمية متخصصة تقدّم الخبرة الجنائية والطب الشرعي والترجمة المعتمدة والتحاليل الكيميائية دعماً لمنظومة العدالة في ليبيا." },
+      { name: "description", content: "الجهة الرسمية الوحيدة المخوّلة قانوناً في ليبيا بتقديم أعمال الخبرة القضائية والطب الشرعي والتحاليل، دعماً للسلطة القضائية." },
       { property: "og:title", content: "مركز الخبرة القضائية والبحوث" },
-      { property: "og:description", content: "الخبرة الجنائية، الطب الشرعي، الترجمة المعتمدة، والتحاليل الكيميائية بمعايير دولية." },
+      { property: "og:description", content: "الجهة الرسمية الوحيدة في ليبيا للخبرة القضائية والطب الشرعي." },
     ],
   }),
   component: HomePage,
@@ -46,7 +43,7 @@ const services = [
   {
     icon: Languages,
     title: "الترجمة المعتمدة",
-    desc: "ترجمة جميع القضايا والمستندات الرسمية، بالإضافة إلى التصديق على الوثائق الموجهة للسفارات والجهات الخارجية.",
+    desc: "ترجمة المستندات الرسمية والتصديق على الوثائق الموجهة للسفارات والجهات الخارجية.",
   },
   {
     icon: FlaskConical,
@@ -58,19 +55,6 @@ const services = [
     title: "التحاليل الكيميائية",
     desc: "تحليل العينات الكيميائية من المواد المخدرة والسموم والمواد المجهولة، وإصدار تقارير دقيقة تدعم الجهات القضائية.",
   },
-];
-
-const whyUs = [
-  { icon: Gauge, title: "دقةٌ علمية", desc: "منهجية صارمة ومعايير دولية في كل تقريرٍ يصدره المركز." },
-  { icon: Clock, title: "سرعةٌ في الإنجاز", desc: "إجراءات منظمة تضمن تسليم التقارير في أقصر مدةٍ ممكنة." },
-  { icon: GraduationCap, title: "خبرةٌ عالية", desc: "كوادر متخصصة بخبراتٍ تراكمية في الطب الشرعي والتحاليل والقانون." },
-  { icon: Lock, title: "سريةٌ تامة", desc: "حمايةٌ صارمةٌ للبيانات والوثائق وفق أعلى معايير الأمن المعلوماتي." },
-];
-
-const news = [
-  { date: "15 / 04 / 2026", title: "افتتاح مكتب الطب الشرعي الجديد بمنطقة تاجوراء", excerpt: "افتتح المركز فرعاً جديداً للطب الشرعي ضمن خطة التوسع الإقليمي." },
-  { date: "02 / 04 / 2026", title: "ورشة عمل حول تطوير أساليب الخبرة الجنائية", excerpt: "نظم المركز ورشة تدريبية متخصصة بمشاركة خبراء دوليين." },
-  { date: "20 / 03 / 2026", title: "توقيع مذكرة تعاون مع الجامعات الليبية", excerpt: "اتفاقية تعاون لتبادل الخبرات والأبحاث في مجال الخبرة القضائية." },
 ];
 
 function HomePage() {
@@ -91,22 +75,22 @@ function HomePage() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[1.4fr_1fr] lg:gap-12 lg:px-8 lg:py-36">
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-sm font-medium text-gold">
-              <ShieldCheck className="h-4 w-4" /> دولة ليبيا — وزارة العدل
+              <ShieldCheck className="h-4 w-4" /> دولة ليبيا — جهة رسمية
             </div>
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
               مركز الخبرة القضائية والبحوث
             </h1>
             <div className="mt-3 h-1 w-24 rounded-full bg-gold" />
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/90 sm:text-xl">
-              صرحٌ علميٌ متخصصٌ يقدّم الخبرة القضائية والطب الشرعي والترجمة المعتمدة والتحاليل الكيميائية،
-              بكفاءاتٍ وطنيةٍ ومعاييرَ دوليةٍ تخدم العدالة والمجتمع.
+              الجهة الرسمية المعتمدة لدى المحاكم والنيابة العامة في تنفيذ المأموريات القضائية وأعمال الخبرة
+              والطب الشرعي وفقاً للتشريعات النافذة في ليبيا.
             </p>
             <div className="mt-9 flex flex-wrap gap-3">
               <Link
                 to="/services"
                 className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-bold text-gold-foreground shadow-[var(--shadow-elegant)] transition-transform hover:-translate-y-0.5"
               >
-                خدماتنا الرئيسية <ArrowLeft className="h-4 w-4" />
+                خدماتنا الرسمية <ArrowLeft className="h-4 w-4" />
               </Link>
               <Link
                 to="/about"
@@ -127,8 +111,20 @@ function HomePage() {
           </div>
         </div>
 
-        {/* Gold accent strip */}
         <div className="relative h-1 w-full bg-[var(--gradient-gold)]" />
+      </section>
+
+      {/* Exclusive Authority Statement */}
+      <section className="border-y border-gold/30 bg-primary text-primary-foreground">
+        <div className="mx-auto flex max-w-7xl items-center gap-5 px-4 py-7 sm:px-6 lg:px-8">
+          <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground sm:flex">
+            <Gavel className="h-7 w-7" />
+          </div>
+          <p className="text-sm font-semibold leading-relaxed sm:text-base">
+            يختصّ المركز دون غيره في ليبيا بتنفيذ أعمال الخبرة القضائية والطب الشرعي،
+            ويُعدّ الجهة الوحيدة المخوّلة قانوناً بتقديم هذه الخدمات للجهات القضائية.
+          </p>
+        </div>
       </section>
 
       {/* Working hours & location quick strip */}
@@ -139,9 +135,9 @@ function HomePage() {
               <Clock className="h-6 w-6" />
             </div>
             <div>
-              <div className="text-xs font-bold text-muted-foreground">أوقات العمل</div>
+              <div className="text-xs font-bold text-muted-foreground">أوقات العمل الرسمية</div>
               <div className="text-sm font-bold text-foreground sm:text-base">
-                من الأحد إلى الخميس — 8:00 صباحاً إلى 3:00 عصراً
+                من الأحد إلى الخميس — 8:00 ص إلى 3:00 م
               </div>
             </div>
           </div>
@@ -150,7 +146,7 @@ function HomePage() {
               <MapPin className="h-6 w-6" />
             </div>
             <div>
-              <div className="text-xs font-bold text-muted-foreground">الموقع</div>
+              <div className="text-xs font-bold text-muted-foreground">المقر الرسمي</div>
               <div className="text-sm font-bold text-foreground sm:text-base">
                 الظهرة — طرابلس، بجانب فندق الودان
               </div>
@@ -162,11 +158,11 @@ function HomePage() {
       {/* Core Services */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <div className="text-sm font-bold uppercase tracking-wider text-primary">الخدمات الرئيسية</div>
-          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">ماذا يقدّم المركز؟</h2>
+          <div className="text-sm font-bold uppercase tracking-wider text-primary">الخدمات الرسمية</div>
+          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">اختصاصات المركز</h2>
           <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            خدماتٌ علميةٌ وفنيةٌ متكاملةٌ تخدم الجهات القضائية والرسمية والمجتمع، وفق معاييرَ دقيقةٍ وحياديةٍ تامة.
+            خدماتٌ فنيةٌ متخصّصةٌ تُقدَّم للجهات القضائية والنيابة العامة وفقاً للتشريعات النافذة.
           </p>
         </div>
 
@@ -194,87 +190,36 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Why Us */}
-      <section className="bg-primary-soft/50 py-20">
+      {/* Highlighted Research Office */}
+      <section className="bg-primary-soft/40 py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <div className="text-sm font-bold uppercase tracking-wider text-primary">لماذا نحن؟</div>
-            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">معاييرٌ تصنع الفارق</h2>
-            <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
-          </div>
-
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {whyUs.map((w) => (
-              <div
-                key={w.title}
-                className="group rounded-2xl border border-border bg-card p-6 text-center shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]"
-              >
-                <div className="mx-auto mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-primary-soft text-primary ring-1 ring-primary/15 transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                  <w.icon className="h-7 w-7" />
+          <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[var(--gradient-hero)] p-8 shadow-[var(--shadow-elegant)] sm:p-12">
+            <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
+            <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full bg-gold/10 blur-3xl" />
+            <div className="relative grid items-center gap-8 lg:grid-cols-[auto_1fr]">
+              <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-gold text-gold-foreground shadow-lg">
+                <BookOpen className="h-12 w-12" />
+              </div>
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-3 py-1 text-xs font-bold text-gold">
+                  <Sparkles className="h-3.5 w-3.5" /> قسمٌ مميّز
                 </div>
-                <h3 className="text-lg font-bold text-foreground">{w.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{w.desc}</p>
+                <h2 className="mt-3 text-3xl font-bold text-primary-foreground sm:text-4xl">
+                  مكتب البحوث والدراسات
+                </h2>
+                <div className="mt-2 h-1 w-16 rounded-full bg-gold" />
+                <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary-foreground/90">
+                  يقوم بإعداد الدراسات والبحوث العلمية المتخصّصة، وتطوير أساليب العمل الفني،
+                  ودعم اتخاذ القرار داخل المركز، بما يواكب أحدث التطورات في مجالات الخبرة القضائية والطب الشرعي.
+                </p>
+                <Link
+                  to="/departments"
+                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-bold text-gold-foreground shadow-lg transition-transform hover:-translate-y-0.5"
+                >
+                  استكشف الإدارات والمكاتب <ArrowLeft className="h-4 w-4" />
+                </Link>
               </div>
-            ))}
-          </div>
-
-          {/* Stats strip */}
-          <div className="mt-12 grid gap-4 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] sm:grid-cols-4">
-            {[
-              { n: "+25", l: "سنة خبرة" },
-              { n: "+150", l: "خبير متخصص" },
-              { n: "+10K", l: "تقرير سنوياً" },
-              { n: "100%", l: "سريّة وحياديّة" },
-            ].map((s) => (
-              <div key={s.l} className="text-center">
-                <div className="text-3xl font-bold text-primary sm:text-4xl">{s.n}</div>
-                <div className="mt-1 text-sm text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission / Vision / Values */}
-      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="grid gap-5 sm:grid-cols-3">
-          <Pillar icon={Target} title="رسالتنا">
-            تقديم خدمات الخبرة القضائية والتحاليل العلمية بأعلى معايير الجودة والمصداقية، دعماً لمنظومة العدالة.
-          </Pillar>
-          <Pillar icon={Eye} title="رؤيتنا">
-            أن نكون المرجع الأول في مجال الخبرة القضائية والبحوث الجنائية على المستوى الإقليمي.
-          </Pillar>
-          <Pillar icon={Award} title="قيمنا">
-            النزاهة، الحيادية، الدقة العلمية، والسريّة التامة في جميع أعمالنا.
-          </Pillar>
-        </div>
-      </section>
-
-      {/* News */}
-      <section className="bg-secondary/40 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 flex items-end justify-between">
-            <div>
-              <div className="text-sm font-bold uppercase tracking-wider text-primary">آخر الأخبار</div>
-              <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">أخبار وتحديثات المركز</h2>
-              <div className="mt-3 h-1 w-20 rounded-full bg-gold" />
             </div>
-            <Link to="/news" className="hidden items-center gap-1 text-sm font-semibold text-primary hover:text-primary/80 sm:inline-flex">
-              كل الأخبار <ArrowLeft className="h-4 w-4" />
-            </Link>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-3">
-            {news.map((n) => (
-              <article key={n.title} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]">
-                <div className="h-2 bg-[var(--gradient-gold)]" />
-                <div className="p-6">
-                  <div className="text-xs font-medium text-muted-foreground">{n.date}</div>
-                  <h3 className="mt-3 text-lg font-bold leading-snug text-foreground group-hover:text-primary">{n.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{n.excerpt}</p>
-                </div>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -286,31 +231,19 @@ function HomePage() {
           <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-gold/10 blur-3xl" />
           <Building2 className="relative mx-auto h-12 w-12 text-gold" />
           <h2 className="relative mt-4 text-2xl font-bold text-primary-foreground sm:text-3xl">
-            هل تحتاج إلى خدمات خبرةٍ قضائيةٍ متخصصة؟
+            للتواصل الرسمي مع المركز
           </h2>
           <p className="relative mx-auto mt-3 max-w-2xl text-primary-foreground/85">
-            فريقنا من الخبراء جاهز لتقديم الاستشارات والتقارير الفنية في مختلف المجالات.
+            يمكن للجهات القضائية والرسمية التواصل مع المركز خلال أوقات العمل الرسمية.
           </p>
           <Link
             to="/contact"
             className="relative mt-6 inline-flex items-center gap-2 rounded-lg bg-gold px-7 py-3 text-sm font-bold text-gold-foreground shadow-lg transition-transform hover:-translate-y-0.5"
           >
-            تواصل معنا الآن <ArrowLeft className="h-4 w-4" />
+            تواصل معنا <ArrowLeft className="h-4 w-4" />
           </Link>
         </div>
       </section>
     </>
-  );
-}
-
-function Pillar({ icon: Icon, title, children }: { icon: typeof Target; title: string; children: React.ReactNode }) {
-  return (
-    <div className="rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-elegant)]">
-      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary text-primary-foreground">
-        <Icon className="h-6 w-6" />
-      </div>
-      <h3 className="text-xl font-bold text-foreground">{title}</h3>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{children}</p>
-    </div>
   );
 }
