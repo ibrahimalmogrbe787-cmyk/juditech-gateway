@@ -57,26 +57,28 @@ export function SiteHeader() {
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
-      </div>
-
-      {open && (
-        <div className="border-t border-border bg-background lg:hidden">
-          <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3">
-            {nav.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                activeOptions={{ exact: item.to === "/" }}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-4 py-2.5 text-sm font-medium text-foreground/80 hover:bg-primary-soft hover:text-primary"
-                activeProps={{ className: "bg-primary-soft text-primary font-semibold" }}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </nav>
         </div>
-      )}
+
+        {open && (
+          <div className="border-t border-border bg-background lg:hidden">
+            <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-3">
+              {nav.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  activeOptions={{ exact: item.to === "/" }}
+                  onClick={() => setOpen(false)}
+                  className="rounded-md px-4 py-2.5 text-sm font-medium text-foreground/80 hover:bg-primary-soft hover:text-primary"
+                  activeProps={{ className: "bg-primary-soft text-primary font-semibold" }}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+      </div>
+      <div className="h-1 w-full bg-[var(--gradient-gold)]" />
     </header>
   );
 }
