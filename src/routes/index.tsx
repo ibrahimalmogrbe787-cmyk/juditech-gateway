@@ -15,6 +15,7 @@ import {
   GraduationCap,
   Lock,
   Building2,
+  MapPin,
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
 import logo from "@/assets/logo.jpeg";

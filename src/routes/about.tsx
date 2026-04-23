@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
 import { CheckCircle2, Target, Eye, Building } from "lucide-react";
+import aboutHero from "@/assets/about-hero.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -25,11 +26,11 @@ const goals = [
 
 const orgUnits = [
   { title: "رئيس المركز", level: 1 },
-  { title: "مستشار رئيس المركز للشؤون الفنية", level: 2 },
-  { title: "إدارة الشؤون الإدارية والمالية", level: 2 },
+  { title: "مكتب البحوث والدراسات", level: 2 },
   { title: "إدارة الخبرة الهندسية والحسابية", level: 2 },
   { title: "إدارة الطب الشرعي والتحاليل", level: 2 },
   { title: "إدارة الخبرة الجنائية", level: 2 },
+  { title: "إدارة الفروع", level: 2 },
 ];
 
 function AboutPage() {
@@ -39,6 +40,7 @@ function AboutPage() {
         eyebrow="من نحن"
         title="مركزٌ علميٌ متخصصٌ في خدمة العدالة"
         subtitle="نقدم تقارير الخبرة القضائية والتحاليل العلمية بحياديةٍ ودقةٍ علمية، بفضل كوادر وطنية مؤهلة وتجهيزات حديثة."
+        image={aboutHero}
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -104,7 +106,7 @@ function AboutPage() {
         <div className="mb-10 text-center">
           <div className="text-sm font-bold uppercase tracking-wider text-primary">الهيكل التنظيمي</div>
           <h2 className="mt-2 text-3xl font-bold text-foreground">نظرة عامة على هيكل المركز</h2>
-          <p className="mt-3 text-muted-foreground">يتكون المركز من رئاسة وأربع إدارات رئيسية ومكاتب متخصصة.</p>
+          <p className="mt-3 text-muted-foreground">يتكون المركز من رئاسة المركز، ومكتب البحوث والدراسات، وأربع إدارات فنية متخصصة.</p>
         </div>
 
         <div className="space-y-3">
