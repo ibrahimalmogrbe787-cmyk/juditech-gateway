@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
 import { MapPin, Phone, Mail, Clock, Send } from "lucide-react";
 import { useState } from "react";
+import contactHero from "@/assets/contact-hero.jpg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -24,6 +25,7 @@ function ContactPage() {
         eyebrow="اتصل بنا"
         title="نحن هنا للإجابة عن استفساراتكم"
         subtitle="يمكنكم التواصل معنا عبر القنوات التالية أو من خلال نموذج التواصل المباشر."
+        image={contactHero}
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
@@ -31,7 +33,7 @@ function ContactPage() {
           {/* Info */}
           <aside className="space-y-4 lg:col-span-2">
             <InfoCard icon={MapPin} title="العنوان">
-              مركز الخبرة القضائية والبحوث<br />طرابلس - ليبيا
+              الظهرة - طرابلس<br />بجانب فندق الودان
             </InfoCard>
             <InfoCard icon={Phone} title="الهاتف">
               <span dir="ltr">+218 21 000 0000</span><br />
@@ -42,7 +44,7 @@ function ContactPage() {
               <span dir="ltr">contact@jerc.ly</span>
             </InfoCard>
             <InfoCard icon={Clock} title="ساعات العمل">
-              الأحد - الخميس: 8:00 ص - 4:00 م<br />الجمعة - السبت: مغلق
+              الأحد - الخميس: 8:00 ص - 3:00 م<br />الجمعة - السبت: مغلق
             </InfoCard>
           </aside>
 

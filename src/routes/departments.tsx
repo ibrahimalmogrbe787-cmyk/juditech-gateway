@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
-import { Briefcase, Wallet, Microscope, Fingerprint, ChevronLeft } from "lucide-react";
+import { Wallet, Microscope, Fingerprint, Network, BookOpen, ChevronLeft, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/departments")({
   head: () => ({
@@ -14,32 +14,7 @@ export const Route = createFileRoute("/departments")({
   component: DepartmentsPage,
 });
 
-const offices = [
-  "مستشار رئيس المركز للشؤون الفنية",
-  "مكتب المراجعة الداخلية",
-  "مكتب الشؤون القانونية",
-  "مكتب التفتيش والمتابعة",
-  "مكتب التخطيط والمشروعات",
-  "مكتب البحوث والدراسات",
-  "مكتب مستشارين الطب الشرعي",
-  "مكتب الترجمة (يترجم جميع القضايا ويصدق على الأوراق للسفارات)",
-  "مكتب القضايا",
-  "مكتب الخبرة القضائية للمناطق",
-  "مكتب الطب الشرعي والتحاليل (الزاوية – بوسليم – تاجوراء)",
-];
-
 const departments = [
-  {
-    icon: Briefcase,
-    title: "إدارة الشؤون الإدارية والمالية",
-    sections: [
-      "قسم الشؤون الإدارية والمحفوظات",
-      "قسم الشؤون المالية",
-      "قسم المخازن والخدمات",
-      "قسم النقل والحركة",
-      "قسم العلاقات والتعاون",
-    ],
-  },
   {
     icon: Wallet,
     title: "إدارة الخبرة الهندسية والحسابية",
@@ -73,6 +48,16 @@ const departments = [
       "قسم فحص آثار الحرائق والانفجارات",
     ],
   },
+  {
+    icon: Network,
+    title: "إدارة الفروع",
+    sections: [
+      "مكاتب الخبرة القضائية في المناطق",
+      "مكاتب الطب الشرعي والتحاليل (الزاوية – بوسليم – تاجوراء)",
+      "الإشراف على جميع الفروع التابعة للمركز",
+      "متابعة أداء الفروع وتطوير خدماتها",
+    ],
+  },
 ];
 
 function DepartmentsPage() {
@@ -84,23 +69,40 @@ function DepartmentsPage() {
         subtitle="منظومةٌ متكاملةٌ من الإدارات والمكاتب المتخصصة لتغطية كافة مجالات الخبرة القضائية والبحوث."
       />
 
-      {/* Main offices */}
+      {/* Featured: Research & Studies Office */}
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mb-8">
-          <div className="text-sm font-bold uppercase tracking-wider text-primary">المكاتب الرئيسية</div>
-          <h2 className="mt-2 text-2xl font-bold text-foreground sm:text-3xl">المكاتب التابعة لرئاسة المركز</h2>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {offices.map((o) => (
-            <div
-              key={o}
-              className="group flex items-start gap-3 rounded-xl border border-border bg-card p-4 shadow-[var(--shadow-card)] transition-colors hover:border-primary/40 hover:bg-primary-soft/40"
-            >
-              <ChevronLeft className="mt-1 h-4 w-4 shrink-0 text-gold" />
-              <span className="text-sm font-medium leading-relaxed text-foreground">{o}</span>
+        <article className="relative overflow-hidden rounded-3xl border border-gold/40 bg-[var(--gradient-hero)] p-8 text-primary-foreground shadow-[var(--shadow-elegant)] sm:p-12">
+          <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
+          <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-gold/10 blur-3xl" />
+          <div className="relative grid items-center gap-8 lg:grid-cols-[auto_1fr]">
+            <div className="flex h-20 w-20 items-center justify-center rounded-2xl bg-gold text-gold-foreground shadow-lg">
+              <BookOpen className="h-10 w-10" />
             </div>
-          ))}
-        </div>
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-gold/20 px-3 py-1 text-xs font-bold text-gold">
+                <Sparkles className="h-3.5 w-3.5" /> قسم مميّز
+              </div>
+              <h2 className="mt-3 text-2xl font-bold sm:text-3xl">مكتب البحوث والدراسات</h2>
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
+                يُعنى المكتب بإجراء الدراسات والبحوث العلمية في المجالات القضائية والفنية،
+                وتطوير أساليب العمل ورفع كفاءة الأداء داخل المركز، بما يضمن مواكبة أحدث
+                المستجدات العلمية والمنهجيات الدولية في مجال الخبرة القضائية.
+              </p>
+              <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                {[
+                  "إعداد البحوث والدراسات المتخصصة",
+                  "تطوير منهجيات العمل الفني",
+                  "رفع كفاءة الكوادر العلمية",
+                  "التعاون مع الجهات الأكاديمية",
+                ].map((p) => (
+                  <li key={p} className="flex items-center gap-2 text-sm text-primary-foreground/90">
+                    <ChevronLeft className="h-4 w-4 shrink-0 text-gold" /> {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </article>
       </section>
 
       {/* Departments */}

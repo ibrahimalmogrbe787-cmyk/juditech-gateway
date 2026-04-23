@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
 import { Calendar, Tag } from "lucide-react";
+import newsHero from "@/assets/news-hero.jpg";
 
 export const Route = createFileRoute("/news")({
   head: () => ({
@@ -30,6 +31,7 @@ function NewsPage() {
         eyebrow="الأخبار"
         title="آخر أخبار وفعاليات المركز"
         subtitle="تابع أحدث أنشطة المركز وفعالياته وإنجازاته على مستوى الخبرة القضائية والبحوث العلمية."
+        image={newsHero}
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">

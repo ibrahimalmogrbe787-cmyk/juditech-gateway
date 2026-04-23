@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Scale, Mail, Phone, MapPin } from "lucide-react";
+import { Scale, Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export function SiteFooter() {
   return (
@@ -35,9 +35,10 @@ export function SiteFooter() {
         <div>
           <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-gold">تواصل معنا</h3>
           <ul className="space-y-3 text-sm text-primary-foreground/80">
-            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" /><span>طرابلس - ليبيا</span></li>
+            <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" /><span>الظهرة — طرابلس، بجانب فندق الودان</span></li>
             <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 shrink-0 text-gold" /><span dir="ltr">+218 21 000 0000</span></li>
             <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 shrink-0 text-gold" /><span dir="ltr">info@jerc.ly</span></li>
+            <li className="flex items-start gap-2"><Clock className="mt-0.5 h-4 w-4 shrink-0 text-gold" /><span>الأحد - الخميس: 8:00 ص — 3:00 م</span></li>
           </ul>
         </div>
       </div>
