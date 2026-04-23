@@ -20,43 +20,58 @@ export function SiteHeader() {
       <div className="hidden bg-primary text-primary-foreground lg:block">
         <div className="mx-auto flex h-9 max-w-7xl items-center justify-between px-4 text-xs sm:px-6 lg:px-8">
           <div className="flex items-center gap-5">
-            <span className="inline-flex items-center gap-1.5"><Phone className="h-3.5 w-3.5 text-gold" /> 21800 0000 218+</span>
-            <span className="inline-flex items-center gap-1.5"><Mail className="h-3.5 w-3.5 text-gold" /> info@jerc.ly</span>
+            <span className="inline-flex items-center gap-1.5">
+              <Phone className="h-3.5 w-3.5 text-gold" /> 21800 0000 218+
+            </span>
+            <span className="inline-flex items-center gap-1.5">
+              <Mail className="h-3.5 w-3.5 text-gold" /> info@jerc.ly
+            </span>
           </div>
           <div className="text-primary-foreground/80">دولة ليبيا — وزارة العدل</div>
         </div>
       </div>
+
       <div className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="شعار مركز الخبرة القضائية والبحوث" width={56} height={56} className="h-14 w-14 rounded-full object-contain ring-1 ring-border" />
+            <img
+              src={logo}
+              alt="شعار مركز الخبرة القضائية والبحوث"
+              width={56}
+              height={56}
+              className="h-14 w-14 rounded-full object-contain ring-1 ring-border"
+            />
             <div className="leading-tight">
-              <div className="text-base font-bold text-foreground sm:text-lg">مركز الخبرة القضائية والبحوث</div>
-              <div className="text-[11px] text-muted-foreground sm:text-xs">Judicial Expertise &amp; Research Center</div>
+              <div className="text-base font-bold text-foreground sm:text-lg">
+                مركز الخبرة القضائية والبحوث
+              </div>
+              <div className="text-[11px] text-muted-foreground sm:text-xs">
+                Judicial Expertise &amp; Research Center
+              </div>
             </div>
           </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex">
-          {nav.map((item) => (
-            <Link
-              key={item.to}
-              to={item.to}
-              activeOptions={{ exact: item.to === "/" }}
-              className="rounded-md px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-primary-soft hover:text-primary"
-              activeProps={{ className: "bg-primary-soft text-primary font-semibold" }}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+          <nav className="hidden items-center gap-1 lg:flex">
+            {nav.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                activeOptions={{ exact: item.to === "/" }}
+                className="rounded-md px-4 py-2 text-sm font-medium text-foreground/80 transition-colors hover:bg-primary-soft hover:text-primary"
+                activeProps={{ className: "bg-primary-soft text-primary font-semibold" }}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground lg:hidden"
-          aria-label="القائمة"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="inline-flex h-10 w-10 items-center justify-center rounded-md text-foreground lg:hidden"
+            aria-label="القائمة"
+          >
+            {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
 
         {open && (
@@ -78,6 +93,7 @@ export function SiteHeader() {
           </div>
         )}
       </div>
+
       <div className="h-1 w-full bg-[var(--gradient-gold)]" />
     </header>
   );
