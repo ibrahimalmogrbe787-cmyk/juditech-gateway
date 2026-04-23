@@ -44,10 +44,10 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.20 0.04 250);
 
-  /* Institutional deep blue */
-  --primary: oklch(0.36 0.13 255);
+  /* Institutional deep blue (Sovereign Navy) */
+  --primary: oklch(0.26 0.10 258);
   --primary-foreground: oklch(0.99 0 0);
-  --primary-soft: oklch(0.95 0.03 255);
+  --primary-soft: oklch(0.96 0.022 258);
 
   --secondary: oklch(0.96 0.015 250);
   --secondary-foreground: oklch(0.25 0.05 255);
@@ -67,11 +67,11 @@
 
   --border: oklch(0.92 0.015 250);
   --input: oklch(0.92 0.015 250);
-  --ring: oklch(0.36 0.13 255);
+  --ring: oklch(0.26 0.10 258);
 
-  --gradient-hero: linear-gradient(135deg, oklch(0.32 0.13 255) 0%, oklch(0.45 0.15 250) 100%);
-  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.15 90) 0%, oklch(0.78 0.16 85) 100%);
-  --shadow-elegant: 0 10px 40px -10px oklch(0.36 0.13 255 / 0.25);
+  --gradient-hero: linear-gradient(135deg, oklch(0.20 0.09 258) 0%, oklch(0.32 0.12 255) 100%);
+  --gradient-gold: linear-gradient(135deg, oklch(0.85 0.15 90) 0%, oklch(0.74 0.17 80) 100%);
+  --shadow-elegant: 0 10px 40px -10px oklch(0.22 0.10 258 / 0.30);
   --shadow-card: 0 2px 12px -2px oklch(0.20 0.04 250 / 0.08);
 }
 
