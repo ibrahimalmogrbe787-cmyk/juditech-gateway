@@ -63,7 +63,8 @@ function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden">
         <img src={heroImg} alt="" width={1920} height={1080} className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-95" />
+        <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-80" />
+        <div className="absolute inset-0 bg-gradient-to-l from-primary/80 via-primary/50 to-primary/85" />
         <div
           className="absolute inset-0 opacity-[0.06]"
           style={{

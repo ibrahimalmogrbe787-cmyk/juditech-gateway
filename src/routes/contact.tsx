@@ -28,8 +28,10 @@ function ContactPage() {
         image={contactHero}
       />
 
-      <section className="bg-[var(--gradient-hero)]">
-        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <section className="relative bg-primary">
+        <div className="absolute inset-0 bg-[var(--gradient-hero)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/40 to-primary/90" />
+        <div className="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-8 lg:grid-cols-5">
             {/* Info */}
             <aside className="space-y-4 lg:col-span-2">
@@ -51,18 +53,18 @@ function ContactPage() {
 
             {/* Form */}
             <div className="lg:col-span-3">
-              <div className="rounded-2xl border border-gold/30 bg-primary-foreground/5 p-6 backdrop-blur-sm sm:p-8">
+              <div className="rounded-2xl border-2 border-gold/40 bg-primary/80 p-6 shadow-2xl backdrop-blur-md sm:p-8">
                 <h2 className="text-2xl font-bold text-primary-foreground">نموذج التواصل الرسمي</h2>
                 <div className="mt-2 h-1 w-16 rounded-full bg-gold" />
-                <p className="mt-3 text-sm text-primary-foreground/80">
+                <p className="mt-3 text-sm text-primary-foreground/90">
                   املأ النموذج أدناه وسيتم الردّ خلال أوقات العمل الرسمية.
                 </p>
 
                 {sent ? (
-                  <div className="mt-6 rounded-xl border border-gold/40 bg-gold/10 p-6 text-center">
+                  <div className="mt-6 rounded-xl border-2 border-gold bg-gold/15 p-6 text-center">
                     <div className="text-3xl text-gold">✓</div>
                     <p className="mt-2 font-bold text-primary-foreground">تم استلام رسالتكم</p>
-                    <p className="mt-1 text-sm text-primary-foreground/80">سيتم الردّ في أقرب وقت ممكن.</p>
+                    <p className="mt-1 text-sm text-primary-foreground/90">سيتم الردّ في أقرب وقت ممكن.</p>
                   </div>
                 ) : (
                   <form
@@ -82,7 +84,7 @@ function ContactPage() {
                         required
                         rows={5}
                         maxLength={1000}
-                        className="w-full rounded-lg border border-primary-foreground/20 bg-primary-foreground/10 px-4 py-2.5 text-sm text-primary-foreground placeholder:text-primary-foreground/50 outline-none transition-colors focus:border-gold focus:ring-2 focus:ring-gold/30"
+                        className="w-full rounded-lg border-2 border-primary-foreground/30 bg-primary-foreground/15 px-4 py-2.5 text-sm text-primary-foreground placeholder:text-primary-foreground/60 outline-none transition-colors focus:border-gold focus:ring-2 focus:ring-gold/40"
                       />
                     </div>
                     <button
@@ -104,13 +106,13 @@ function ContactPage() {
 
 function InfoCard({ icon: Icon, title, children }: { icon: typeof MapPin; title: string; children: React.ReactNode }) {
   return (
-    <div className="flex gap-4 rounded-2xl border border-gold/25 bg-primary-foreground/5 p-5 backdrop-blur-sm">
-      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground">
+    <div className="flex gap-4 rounded-2xl border-2 border-gold/40 bg-primary/80 p-5 shadow-xl backdrop-blur-md">
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground shadow-md">
         <Icon className="h-5 w-5" />
       </div>
       <div>
-        <h3 className="text-base font-bold text-primary-foreground">{title}</h3>
-        <div className="mt-1 text-sm leading-relaxed text-primary-foreground/85">{children}</div>
+        <h3 className="text-base font-bold text-gold">{title}</h3>
+        <div className="mt-1 text-sm leading-relaxed text-primary-foreground">{children}</div>
       </div>
     </div>
   );

@@ -14,10 +14,11 @@ export function PageHeader({ title, subtitle, eyebrow, image }: Props) {
           alt=""
           width={1920}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover opacity-35"
+          className="absolute inset-0 h-full w-full object-cover"
         />
       )}
-      <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-85" />
+      <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-70" />
+      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
       <div
         className="absolute inset-0 opacity-20"
         style={{
