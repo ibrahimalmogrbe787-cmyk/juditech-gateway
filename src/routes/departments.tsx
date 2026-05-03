@@ -109,8 +109,8 @@ function DepartmentsPage() {
       <section className="bg-primary-soft/40 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <div className="text-sm font-bold uppercase tracking-wider text-primary">الإدارات</div>
-            <h2 className="mt-2 text-3xl font-bold text-foreground">الإدارات الرئيسية وأقسامها</h2>
+            <div className="text-sm font-bold uppercase tracking-wider text-primary">الإدارات الفنية</div>
+            <h2 className="mt-2 text-3xl font-bold text-foreground">الإدارات الفنية والأقسام الفنية</h2>
           </div>
 
           <div className="grid gap-6 lg:grid-cols-2">
