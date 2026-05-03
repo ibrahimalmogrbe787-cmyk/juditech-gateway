@@ -16,11 +16,12 @@ export const Route = createFileRoute("/about")({
 });
 
 const values = [
-  "الالتزام بالقانون",
-  "الحياد والاستقلالية",
-  "الدقة العلمية",
-  "المسؤولية المهنية",
-  "سرّية المعلومات",
+  "الشفافية",
+  "المساءلة",
+  "النزاهة",
+  "الاستقلالية",
+  "الحياد",
+  "السرية",
 ];
 
 function AboutPage() {
@@ -87,8 +88,7 @@ function AboutPage() {
             <h3 className="mt-4 text-xl font-bold text-foreground">رسالتنا</h3>
             <div className="mt-2 h-1 w-12 rounded-full bg-gold" />
             <p className="mt-4 text-sm leading-loose text-muted-foreground">
-              تقديم خدمات الخبرة القضائية والطب الشرعي وفق أعلى المعايير الفنية والعلمية،
-              دعماً للسلطة القضائية، وضماناً لتحقيق العدالة وفقاً للقانون.
+              تقديم خبرة قضائية متخصصة وموثوقة في مختلف المجالات من خلال كوادر مؤهلة ودراسات تطبيقية.
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-card)]">
@@ -96,8 +96,8 @@ function AboutPage() {
             <h3 className="mt-4 text-xl font-bold text-foreground">رؤيتنا</h3>
             <div className="mt-2 h-1 w-12 rounded-full bg-gold" />
             <p className="mt-4 text-sm leading-loose text-muted-foreground">
-              تعزيز مكانة المركز كمرجعيةٍ وطنيةٍ رائدةٍ في مجالات الخبرة القضائية والطب الشرعي،
-              والارتقاء بجودة الأداء الفني بما يواكب التطور العلمي.
+              أن يكون المركز المرجعية الوطنية الأولى في مجال الخبرة القضائية والبحوث، ويُسهم في
+              تعزيز ثقة المواطن في القضاء عبر ثقة القضاء في تقارير الخبراء.
             </p>
           </div>
         </div>
