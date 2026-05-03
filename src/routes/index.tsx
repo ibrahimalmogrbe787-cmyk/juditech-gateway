@@ -184,6 +184,10 @@ function HomePage() {
               <div className="mb-2 text-xs font-bold text-muted-foreground">{`0${i + 1}`}</div>
               <h3 className="text-xl font-bold text-foreground">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              <div className="mt-4 flex items-start gap-2 rounded-lg border border-border bg-primary-soft/40 p-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <span className="text-xs font-semibold text-foreground">{s.location}</span>
+              </div>
               <Link
                 to="/services"
                 className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-gold"
