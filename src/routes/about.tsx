@@ -111,8 +111,11 @@ function AboutPage() {
             <div className="mt-3 text-sm font-bold uppercase tracking-wider text-primary">قيمنا</div>
             <h2 className="mt-2 text-3xl font-bold text-foreground">المبادئ التي يقوم عليها عمل المركز</h2>
             <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-loose text-muted-foreground">
+              الشفافية والمساءلة والنزاهة والاستقلالية والحياد والسرية، بما يعزز الثقة في منظومة العدالة.
+            </p>
           </div>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v) => (
               <li
                 key={v}
