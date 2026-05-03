@@ -149,10 +149,16 @@ function HomePage() {
           <div className="text-sm font-bold uppercase tracking-wider text-primary">الخدمات الرسمية</div>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">اختصاصات المركز</h2>
           <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground">
-            يتولى المركز تنفيذ أعمال الخبرة القضائية والطب الشرعي وإجراء التحاليل الفنية المتخصصة،
-            وتقديم التقارير المعتمدة لدعم أعمال المحاكم والنيابة العامة وفقًا للتشريعات النافذة.
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-loose text-muted-foreground">
+            يختص المركز بتقديم الخبرة العلمية والفنية والتقنية للمحاكم والنيابات والهيئات القضائية،
+            وإجراء الدراسات التطبيقية المتعلقة بالجريمة والعقاب. نستهدف بناء جسور الثقة من خلال تعزيز
+            ثقة المواطن بالقضاء عبر ثقة القضاء بمخرجاتنا.
           </p>
+          <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-3">
+            <span className="rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-bold text-primary">بناء القدرات المهنية</span>
+            <span className="rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-bold text-primary">بناء القدرات المؤسسية</span>
+            <span className="rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-bold text-primary">بناء القدرات التنظيمية</span>
+          </div>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -190,14 +196,14 @@ function HomePage() {
                 <BookOpen className="h-12 w-12" />
               </div>
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-3 py-1 text-xs font-bold text-gold">
+                <div className="inline-flex items-center gap-2 rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
                   <Sparkles className="h-3.5 w-3.5" /> قسمٌ مميّز
                 </div>
-                <h2 className="mt-3 text-3xl font-bold text-primary-foreground sm:text-4xl">
+                <h2 className="mt-3 text-3xl font-extrabold text-white drop-shadow-md sm:text-4xl">
                   مكتب البحوث والدراسات
                 </h2>
                 <div className="mt-2 h-1 w-16 rounded-full bg-gold" />
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary-foreground/90">
+                <p className="mt-5 max-w-2xl text-base font-medium leading-relaxed text-white/95">
                   يقوم بإعداد الدراسات والبحوث العلمية المتخصّصة، وتطوير أساليب العمل الفني،
                   ودعم اتخاذ القرار داخل المركز، بما يواكب أحدث التطورات في مجالات الخبرة القضائية والطب الشرعي.
                 </p>
@@ -213,10 +219,11 @@ function HomePage() {
           <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
           <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-gold/10 blur-3xl" />
           <Building2 className="relative mx-auto h-12 w-12 text-gold" />
-          <h2 className="relative mt-4 text-2xl font-bold text-primary-foreground sm:text-3xl">
+          <h2 className="relative mt-4 text-2xl font-extrabold text-white drop-shadow-md sm:text-3xl">
             للتواصل الرسمي مع المركز
           </h2>
-          <p className="relative mx-auto mt-3 max-w-2xl text-primary-foreground/85">
+          <div className="relative mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
+          <p className="relative mx-auto mt-4 max-w-2xl font-medium text-white/95">
             يمكن للجهات القضائية والرسمية التواصل مع المركز خلال أوقات العمل الرسمية.
           </p>
           <Link

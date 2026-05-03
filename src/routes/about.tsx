@@ -16,11 +16,12 @@ export const Route = createFileRoute("/about")({
 });
 
 const values = [
-  "الالتزام بالقانون",
-  "الحياد والاستقلالية",
-  "الدقة العلمية",
-  "المسؤولية المهنية",
-  "سرّية المعلومات",
+  "الشفافية",
+  "المساءلة",
+  "النزاهة",
+  "الاستقلالية",
+  "الحياد",
+  "السرية",
 ];
 
 function AboutPage() {
@@ -87,8 +88,7 @@ function AboutPage() {
             <h3 className="mt-4 text-xl font-bold text-foreground">رسالتنا</h3>
             <div className="mt-2 h-1 w-12 rounded-full bg-gold" />
             <p className="mt-4 text-sm leading-loose text-muted-foreground">
-              تقديم خدمات الخبرة القضائية والطب الشرعي وفق أعلى المعايير الفنية والعلمية،
-              دعماً للسلطة القضائية، وضماناً لتحقيق العدالة وفقاً للقانون.
+              تقديم خبرة قضائية متخصصة وموثوقة في مختلف المجالات من خلال كوادر مؤهلة ودراسات تطبيقية.
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-card)]">
@@ -96,8 +96,8 @@ function AboutPage() {
             <h3 className="mt-4 text-xl font-bold text-foreground">رؤيتنا</h3>
             <div className="mt-2 h-1 w-12 rounded-full bg-gold" />
             <p className="mt-4 text-sm leading-loose text-muted-foreground">
-              تعزيز مكانة المركز كمرجعيةٍ وطنيةٍ رائدةٍ في مجالات الخبرة القضائية والطب الشرعي،
-              والارتقاء بجودة الأداء الفني بما يواكب التطور العلمي.
+              أن يكون المركز المرجعية الوطنية الأولى في مجال الخبرة القضائية والبحوث، ويُسهم في
+              تعزيز ثقة المواطن في القضاء عبر ثقة القضاء في تقارير الخبراء.
             </p>
           </div>
         </div>
@@ -111,8 +111,11 @@ function AboutPage() {
             <div className="mt-3 text-sm font-bold uppercase tracking-wider text-primary">قيمنا</div>
             <h2 className="mt-2 text-3xl font-bold text-foreground">المبادئ التي يقوم عليها عمل المركز</h2>
             <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-loose text-muted-foreground">
+              الشفافية والمساءلة والنزاهة والاستقلالية والحياد والسرية، بما يعزز الثقة في منظومة العدالة.
+            </p>
           </div>
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {values.map((v) => (
               <li
                 key={v}
