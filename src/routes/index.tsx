@@ -12,7 +12,7 @@ import {
   MapPin,
   BookOpen,
   Sparkles,
-  Gavel,
+  
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
 import logo from "@/assets/logo.jpeg";
@@ -113,20 +113,6 @@ function HomePage() {
         </div>
 
         <div className="relative h-1 w-full bg-[var(--gradient-gold)]" />
-      </section>
-
-      {/* Exclusive Authority Statement */}
-      <section className="border-y border-gold/30 bg-primary text-primary-foreground">
-        <div className="mx-auto flex max-w-7xl items-center gap-5 px-4 py-7 sm:px-6 lg:px-8">
-          <div className="hidden h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground sm:flex">
-            <Gavel className="h-7 w-7" />
-          </div>
-          <p className="text-sm font-semibold leading-relaxed sm:text-base">
-            يُعدّ مركز الخبرة القضائية والبحوث الجهة الرسمية المختصة حصريًا في ليبيا بتنفيذ أعمال
-            الخبرة القضائية والطب الشرعي، والمخوّل قانونًا بتقديم هذه الخدمات للجهات القضائية
-            والنيابة العامة وفقًا للتشريعات النافذة.
-          </p>
-        </div>
       </section>
 
       {/* Working hours & location quick strip */}
