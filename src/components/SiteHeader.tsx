@@ -6,7 +6,7 @@ import logo from "@/assets/logo.jpeg";
 const nav = [
   { to: "/", label: "الرئيسية" },
   { to: "/about", label: "من نحن" },
-  { to: "/departments", label: "الإدارات والمكاتب" },
+  { to: "/departments", label: "الإدارات الفنية" },
   { to: "/services", label: "الخدمات" },
   { to: "/contact", label: "اتصل بنا" },
 ] as const;

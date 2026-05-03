@@ -122,8 +122,9 @@ function HomePage() {
             <Gavel className="h-7 w-7" />
           </div>
           <p className="text-sm font-semibold leading-relaxed sm:text-base">
-            يختصّ المركز دون غيره في ليبيا بتنفيذ أعمال الخبرة القضائية والطب الشرعي،
-            ويُعدّ الجهة الوحيدة المخوّلة قانوناً بتقديم هذه الخدمات للجهات القضائية.
+            يُعدّ مركز الخبرة القضائية والبحوث الجهة الرسمية المختصة حصريًا في ليبيا بتنفيذ أعمال
+            الخبرة القضائية والطب الشرعي، والمخوّل قانونًا بتقديم هذه الخدمات للجهات القضائية
+            والنيابة العامة وفقًا للتشريعات النافذة.
           </p>
         </div>
       </section>
@@ -162,8 +163,9 @@ function HomePage() {
           <div className="text-sm font-bold uppercase tracking-wider text-primary">الخدمات الرسمية</div>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">اختصاصات المركز</h2>
           <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground">
-            خدماتٌ فنيةٌ متخصّصةٌ تُقدَّم للجهات القضائية والنيابة العامة وفقاً للتشريعات النافذة.
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground">
+            يتولى المركز تنفيذ أعمال الخبرة القضائية والطب الشرعي وإجراء التحاليل الفنية المتخصصة،
+            وتقديم التقارير المعتمدة لدعم أعمال المحاكم والنيابة العامة وفقًا للتشريعات النافذة.
           </p>
         </div>
 
@@ -217,7 +219,7 @@ function HomePage() {
                   to="/departments"
                   className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-bold text-gold-foreground shadow-lg transition-transform hover:-translate-y-0.5"
                 >
-                  استكشف الإدارات والمكاتب <ArrowLeft className="h-4 w-4" />
+                  استكشف الإدارات الفنية <ArrowLeft className="h-4 w-4" />
                 </Link>
               </div>
             </div>
