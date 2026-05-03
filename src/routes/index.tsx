@@ -149,10 +149,16 @@ function HomePage() {
           <div className="text-sm font-bold uppercase tracking-wider text-primary">الخدمات الرسمية</div>
           <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">اختصاصات المركز</h2>
           <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
-          <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-muted-foreground">
-            يتولى المركز تنفيذ أعمال الخبرة القضائية والطب الشرعي وإجراء التحاليل الفنية المتخصصة،
-            وتقديم التقارير المعتمدة لدعم أعمال المحاكم والنيابة العامة وفقًا للتشريعات النافذة.
+          <p className="mx-auto mt-5 max-w-3xl text-base leading-loose text-muted-foreground">
+            يختص المركز بتقديم الخبرة العلمية والفنية والتقنية للمحاكم والنيابات والهيئات القضائية،
+            وإجراء الدراسات التطبيقية المتعلقة بالجريمة والعقاب. نستهدف بناء جسور الثقة من خلال تعزيز
+            ثقة المواطن بالقضاء عبر ثقة القضاء بمخرجاتنا.
           </p>
+          <div className="mx-auto mt-6 flex max-w-3xl flex-wrap items-center justify-center gap-3">
+            <span className="rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-bold text-primary">بناء القدرات المهنية</span>
+            <span className="rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-bold text-primary">بناء القدرات المؤسسية</span>
+            <span className="rounded-full border border-gold/40 bg-gold/10 px-4 py-1.5 text-sm font-bold text-primary">بناء القدرات التنظيمية</span>
+          </div>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -190,7 +196,7 @@ function HomePage() {
                 <BookOpen className="h-12 w-12" />
               </div>
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-3 py-1 text-xs font-bold text-gold">
+                <div className="inline-flex items-center gap-2 rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
                   <Sparkles className="h-3.5 w-3.5" /> قسمٌ مميّز
                 </div>
                 <h2 className="mt-3 text-3xl font-bold text-primary-foreground sm:text-4xl">
