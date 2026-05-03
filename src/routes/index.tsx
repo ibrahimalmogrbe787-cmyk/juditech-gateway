@@ -1,16 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Scale,
   Stethoscope,
-  Languages,
-  FlaskConical,
   TestTubes,
+  Languages,
+  Fingerprint,
+  Calculator,
+  Wrench,
   ArrowLeft,
   ShieldCheck,
   Clock,
   Building2,
   MapPin,
-  
+  ExternalLink,
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
 import logo from "@/assets/logo.jpeg";
@@ -29,29 +30,40 @@ export const Route = createFileRoute("/")({
 
 const services = [
   {
-    icon: Scale,
-    title: "الخبرة الجنائية",
-    desc: "تقديم الخبرة الفنية في القضايا الجنائية، بما في ذلك فحص الأدلة وتحليلها ودعم الجهات القضائية بالتقارير الفنية الدقيقة.",
-  },
-  {
     icon: Stethoscope,
     title: "الطب الشرعي",
-    desc: "إجراء الفحوصات الطبية الشرعية لتحديد أسباب الوفاة والإصابات، وتقديم تقارير طبية معتمدة للجهات القضائية.",
-  },
-  {
-    icon: Languages,
-    title: "الترجمة المعتمدة",
-    desc: "ترجمة المستندات الرسمية والتصديق على الوثائق الموجهة للسفارات والجهات الخارجية.",
-  },
-  {
-    icon: FlaskConical,
-    title: "مكاتب التحاليل",
-    desc: "إجراء التحاليل المخبرية المختلفة لدعم التحقيقات، باستخدام أحدث التقنيات والأجهزة العلمية.",
+    desc: "إجراء الفحوصات والتشريحات الطبية الشرعية لتحديد أسباب الوفاة وطبيعة الإصابات وتاريخ حدوثها، وفحص المصابين والجناة، وإصدار التقارير الطبية المعتمدة لدى المحاكم والنيابة العامة وفقاً للأصول العلمية والقانونية المعمول بها.",
+    location: "المقر الرئيسي — طرابلس / فروع: الزاوية، بوسليم، تاجوراء",
   },
   {
     icon: TestTubes,
-    title: "التحاليل الكيميائية",
-    desc: "تحليل العينات الكيميائية من المواد المخدرة والسموم والمواد المجهولة، وإصدار تقارير دقيقة تدعم الجهات القضائية.",
+    title: "الكيمياء والسموم",
+    desc: "تحليل العينات الكيميائية والبيولوجية للكشف عن المواد المخدرة والسموم والكحول والمواد المجهولة في عينات الدم والأنسجة، باستخدام أحدث الأجهزة المخبرية المعتمدة دولياً، وإصدار تقارير فنية تدعم التحقيقات الجنائية.",
+    location: "المختبر المركزي — مركز الخبرة القضائية، طرابلس",
+  },
+  {
+    icon: Languages,
+    title: "الترجمة القانونية والقضائية",
+    desc: "ترجمة الوثائق القانونية والأحكام القضائية والعقود والمستندات الرسمية من وإلى مختلف اللغات، والتصديق عليها لاعتمادها لدى السفارات والمحاكم والجهات الرسمية داخل ليبيا وخارجها.",
+    location: "قسم الترجمة المعتمدة — المقر الرئيسي بطرابلس",
+  },
+  {
+    icon: Fingerprint,
+    title: "الخبرة الجنائية",
+    desc: "أبحاث التزييف والتزوير في الوثائق والعملات والتواقيع، وفحص الأسلحة النارية والذخائر، وتحليل آثار الحرائق والانفجارات، ودراسة مسرح الجريمة وجمع الأدلة المادية وتوثيقها بالطرق العلمية الحديثة.",
+    location: "إدارة الأدلة الجنائية — طرابلس",
+  },
+  {
+    icon: Calculator,
+    title: "الخبرة الحسابية",
+    desc: "تدقيق ومراجعة السجلات المالية والمحاسبية في القضايا التجارية والمصرفية والاختلاسات وغسيل الأموال، وإعداد التقارير الحسابية المتخصصة وتقدير الأضرار المالية بدقةٍ تامةٍ بما يخدم العدالة.",
+    location: "قسم الخبرة المالية والمحاسبية — طرابلس",
+  },
+  {
+    icon: Wrench,
+    title: "الخبرة الهندسية",
+    desc: "خبرات هندسية معمارية ومدنية وكهربائية وميكانيكية وزراعية، تشمل تقييم الأضرار في المباني والمنشآت، وفحص حوادث المرور والحرائق الكهربائية، وإعداد التقارير الفنية الهندسية للجهات القضائية.",
+    location: "إدارة الخبرة الهندسية — طرابلس",
   },
 ];
 
@@ -74,7 +86,7 @@ function HomePage() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[1.4fr_1fr] lg:gap-12 lg:px-8 lg:py-36">
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-sm font-medium text-gold">
-              <ShieldCheck className="h-4 w-4" /> دولة ليبيا — جهة رسمية
+              <ShieldCheck className="h-4 w-4" /> دولة ليبيا — وزارة العدل
             </div>
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
               مركز الخبرة القضائية والبحوث
@@ -172,6 +184,10 @@ function HomePage() {
               <div className="mb-2 text-xs font-bold text-muted-foreground">{`0${i + 1}`}</div>
               <h3 className="text-xl font-bold text-foreground">{s.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              <div className="mt-4 flex items-start gap-2 rounded-lg border border-border bg-primary-soft/40 p-3">
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
+                <span className="text-xs font-semibold text-foreground">{s.location}</span>
+              </div>
               <Link
                 to="/services"
                 className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-gold"
@@ -179,6 +195,49 @@ function HomePage() {
                 تفاصيل أكثر <ArrowLeft className="h-4 w-4" />
               </Link>
             </article>
+          ))}
+        </div>
+      </section>
+
+      {/* Official Partners */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-10 text-center">
+          <div className="text-sm font-bold uppercase tracking-wider text-primary">روابط رسمية</div>
+          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">الجهات الرسمية ذات العلاقة</h2>
+          <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {[
+            {
+              name: "وزارة العدل — دولة ليبيا",
+              desc: "الموقع الرسمي لوزارة العدل في دولة ليبيا.",
+              url: "https://aladel.gov.ly",
+            },
+            {
+              name: "مكتب النائب العام",
+              desc: "الموقع الرسمي لمكتب النائب العام بدولة ليبيا.",
+              url: "https://attorneygeneral.gov.ly",
+            },
+          ].map((p) => (
+            <a
+              key={p.url}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-elegant)]"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-colors group-hover:bg-gold group-hover:text-gold-foreground">
+                <Building2 className="h-6 w-6" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 text-lg font-bold text-foreground">
+                  {p.name}
+                  <ExternalLink className="h-4 w-4 text-primary" />
+                </div>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+                <div className="mt-2 text-xs font-semibold text-primary" dir="ltr">{p.url}</div>
+              </div>
+            </a>
           ))}
         </div>
       </section>
