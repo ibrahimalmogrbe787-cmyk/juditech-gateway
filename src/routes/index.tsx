@@ -199,6 +199,49 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Official Partners */}
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mb-10 text-center">
+          <div className="text-sm font-bold uppercase tracking-wider text-primary">روابط رسمية</div>
+          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">الجهات الرسمية ذات العلاقة</h2>
+          <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2">
+          {[
+            {
+              name: "وزارة العدل — دولة ليبيا",
+              desc: "الموقع الرسمي لوزارة العدل في دولة ليبيا.",
+              url: "https://aladel.gov.ly",
+            },
+            {
+              name: "مكتب النائب العام",
+              desc: "الموقع الرسمي لمكتب النائب العام بدولة ليبيا.",
+              url: "https://attorneygeneral.gov.ly",
+            },
+          ].map((p) => (
+            <a
+              key={p.url}
+              href={p.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-4 rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-elegant)]"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-colors group-hover:bg-gold group-hover:text-gold-foreground">
+                <Building2 className="h-6 w-6" />
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 text-lg font-bold text-foreground">
+                  {p.name}
+                  <ExternalLink className="h-4 w-4 text-primary" />
+                </div>
+                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{p.desc}</p>
+                <div className="mt-2 text-xs font-semibold text-primary" dir="ltr">{p.url}</div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="relative overflow-hidden rounded-3xl border-2 border-primary/20 bg-card px-8 py-14 text-center shadow-[var(--shadow-elegant)] sm:px-12">
