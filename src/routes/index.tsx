@@ -199,11 +199,11 @@ function HomePage() {
                 <div className="inline-flex items-center gap-2 rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
                   <Sparkles className="h-3.5 w-3.5" /> قسمٌ مميّز
                 </div>
-                <h2 className="mt-3 text-3xl font-bold text-primary-foreground sm:text-4xl">
+                <h2 className="mt-3 text-3xl font-extrabold text-white drop-shadow-md sm:text-4xl">
                   مكتب البحوث والدراسات
                 </h2>
                 <div className="mt-2 h-1 w-16 rounded-full bg-gold" />
-                <p className="mt-5 max-w-2xl text-base leading-relaxed text-primary-foreground/90">
+                <p className="mt-5 max-w-2xl text-base font-medium leading-relaxed text-white/95">
                   يقوم بإعداد الدراسات والبحوث العلمية المتخصّصة، وتطوير أساليب العمل الفني،
                   ودعم اتخاذ القرار داخل المركز، بما يواكب أحدث التطورات في مجالات الخبرة القضائية والطب الشرعي.
                 </p>
