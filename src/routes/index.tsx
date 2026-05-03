@@ -10,8 +10,6 @@ import {
   Clock,
   Building2,
   MapPin,
-  BookOpen,
-  Sparkles,
   
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
@@ -185,50 +183,22 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Highlighted Research Office */}
-      <section className="bg-primary-soft/40 py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl border border-gold/30 bg-[var(--gradient-hero)] p-8 shadow-[var(--shadow-elegant)] sm:p-12">
-            <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
-            <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full bg-gold/10 blur-3xl" />
-            <div className="relative grid items-center gap-8 lg:grid-cols-[auto_1fr]">
-              <div className="flex h-24 w-24 items-center justify-center rounded-2xl bg-gold text-gold-foreground shadow-lg">
-                <BookOpen className="h-12 w-12" />
-              </div>
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-gold px-3 py-1 text-xs font-bold text-gold-foreground shadow-md">
-                  <Sparkles className="h-3.5 w-3.5" /> قسمٌ مميّز
-                </div>
-                <h2 className="mt-3 text-3xl font-extrabold text-white drop-shadow-md sm:text-4xl">
-                  مكتب البحوث والدراسات
-                </h2>
-                <div className="mt-2 h-1 w-16 rounded-full bg-gold" />
-                <p className="mt-5 max-w-2xl text-base font-medium leading-relaxed text-white/95">
-                  يقوم بإعداد الدراسات والبحوث العلمية المتخصّصة، وتطوير أساليب العمل الفني،
-                  ودعم اتخاذ القرار داخل المركز، بما يواكب أحدث التطورات في مجالات الخبرة القضائية والطب الشرعي.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl bg-[var(--gradient-hero)] px-8 py-14 text-center shadow-[var(--shadow-elegant)] sm:px-12">
-          <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-gold/10 blur-3xl" />
-          <Building2 className="relative mx-auto h-12 w-12 text-gold" />
-          <h2 className="relative mt-4 text-2xl font-extrabold text-white drop-shadow-md sm:text-3xl">
+        <div className="relative overflow-hidden rounded-3xl border-2 border-primary/20 bg-card px-8 py-14 text-center shadow-[var(--shadow-elegant)] sm:px-12">
+          <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-gold/15 blur-3xl" />
+          <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
+          <Building2 className="relative mx-auto h-12 w-12 text-primary" />
+          <h2 className="relative mt-4 text-2xl font-extrabold text-primary sm:text-3xl">
             للتواصل الرسمي مع المركز
           </h2>
           <div className="relative mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
-          <p className="relative mx-auto mt-4 max-w-2xl font-medium text-white/95">
+          <p className="relative mx-auto mt-4 max-w-2xl font-medium text-foreground">
             يمكن للجهات القضائية والرسمية التواصل مع المركز خلال أوقات العمل الرسمية.
           </p>
           <Link
             to="/contact"
-            className="relative mt-6 inline-flex items-center gap-2 rounded-lg bg-gold px-7 py-3 text-sm font-bold text-gold-foreground shadow-lg transition-transform hover:-translate-y-0.5"
+            className="relative mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5"
           >
             تواصل معنا <ArrowLeft className="h-4 w-4" />
           </Link>
