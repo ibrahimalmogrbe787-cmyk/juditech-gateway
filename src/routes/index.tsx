@@ -215,12 +215,6 @@ function HomePage() {
                   يقوم بإعداد الدراسات والبحوث العلمية المتخصّصة، وتطوير أساليب العمل الفني،
                   ودعم اتخاذ القرار داخل المركز، بما يواكب أحدث التطورات في مجالات الخبرة القضائية والطب الشرعي.
                 </p>
-                <Link
-                  to="/departments"
-                  className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-bold text-gold-foreground shadow-lg transition-transform hover:-translate-y-0.5"
-                >
-                  استكشف الإدارات الفنية <ArrowLeft className="h-4 w-4" />
-                </Link>
               </div>
             </div>
           </div>
