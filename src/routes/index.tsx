@@ -12,7 +12,7 @@ import {
   MapPin,
   BookOpen,
   Sparkles,
-  Gavel,
+  
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
 import logo from "@/assets/logo.jpeg";
