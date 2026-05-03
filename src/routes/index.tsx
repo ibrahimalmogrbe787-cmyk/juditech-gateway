@@ -10,8 +10,6 @@ import {
   Clock,
   Building2,
   MapPin,
-  BookOpen,
-  Sparkles,
   
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
