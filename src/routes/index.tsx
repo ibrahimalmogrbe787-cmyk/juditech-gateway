@@ -1,16 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Scale,
   Stethoscope,
-  Languages,
-  FlaskConical,
   TestTubes,
+  Languages,
+  Fingerprint,
+  Calculator,
+  Wrench,
   ArrowLeft,
   ShieldCheck,
   Clock,
   Building2,
   MapPin,
-  
+  ExternalLink,
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
 import logo from "@/assets/logo.jpeg";
