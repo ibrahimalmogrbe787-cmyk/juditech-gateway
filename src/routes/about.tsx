@@ -58,19 +58,19 @@ function AboutPage() {
       </section>
 
       {/* Exclusive Authority Statement */}
-      <section className="bg-[var(--gradient-hero)] py-16">
+      <section className="bg-primary-soft/40 py-16">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl border border-gold/40 bg-primary-foreground/5 p-8 backdrop-blur-sm sm:p-12">
+          <div className="relative overflow-hidden rounded-3xl border border-gold/40 bg-card p-8 shadow-[var(--shadow-elegant)] sm:p-12">
             <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
-            <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full bg-gold/15 blur-3xl" />
+            <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
             <div className="relative flex flex-col items-center gap-5 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-gold text-gold-foreground shadow-lg">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
                 <Gavel className="h-8 w-8" />
               </div>
-              <div className="inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-xs font-bold text-gold">
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary">
                 <ShieldCheck className="h-3.5 w-3.5" /> الاختصاص الحصري
               </div>
-              <p className="max-w-3xl text-lg font-semibold leading-relaxed text-primary-foreground sm:text-xl">
+              <p className="max-w-3xl text-lg font-semibold leading-relaxed text-primary sm:text-xl">
                 يُعدّ مركز الخبرة القضائية والبحوث الجهة الرسمية المختصة حصريًا في ليبيا بتنفيذ
                 أعمال الخبرة القضائية والطب الشرعي، والمخوّل قانونًا بتقديم هذه الخدمات للجهات
                 القضائية والنيابة العامة وفقًا للتشريعات النافذة.

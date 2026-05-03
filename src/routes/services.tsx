@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
 import { Scale, Languages, FlaskConical, FileText, Microscope, Fingerprint, Calculator, Wrench } from "lucide-react";
+import servicesHero from "@/assets/services-hero.jpg";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -32,6 +33,7 @@ function ServicesPage() {
         eyebrow="خدماتنا"
         title="خدماتٌ متكاملةٌ بمعاييرَ علمية"
         subtitle="يقدم المركز باقةً شاملةً من خدمات الخبرة القضائية والتحاليل والتقارير، بكوادرَ مؤهلةٍ ومختبراتٍ حديثة."
+        image={servicesHero}
       />
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
