@@ -74,7 +74,7 @@ function HomePage() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[1.4fr_1fr] lg:gap-12 lg:px-8 lg:py-36">
           <div>
             <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-gold/15 px-4 py-1.5 text-sm font-medium text-gold">
-              <ShieldCheck className="h-4 w-4" /> دولة ليبيا — جهة رسمية
+              <ShieldCheck className="h-4 w-4" /> دولة ليبيا — وزارة العدل
             </div>
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-primary-foreground sm:text-5xl lg:text-6xl">
               مركز الخبرة القضائية والبحوث
