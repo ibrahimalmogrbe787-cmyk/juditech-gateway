@@ -219,10 +219,11 @@ function HomePage() {
           <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
           <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-gold/10 blur-3xl" />
           <Building2 className="relative mx-auto h-12 w-12 text-gold" />
-          <h2 className="relative mt-4 text-2xl font-bold text-primary-foreground sm:text-3xl">
+          <h2 className="relative mt-4 text-2xl font-extrabold text-white drop-shadow-md sm:text-3xl">
             للتواصل الرسمي مع المركز
           </h2>
-          <p className="relative mx-auto mt-3 max-w-2xl text-primary-foreground/85">
+          <div className="relative mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
+          <p className="relative mx-auto mt-4 max-w-2xl font-medium text-white/95">
             يمكن للجهات القضائية والرسمية التواصل مع المركز خلال أوقات العمل الرسمية.
           </p>
           <Link
