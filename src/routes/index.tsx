@@ -184,6 +184,12 @@ function HomePage() {
               <div className="flex-1">
                 <div className="text-xs font-bold text-muted-foreground">{`0${i + 1}`}</div>
                 <h3 className="mt-0.5 text-lg font-bold text-foreground">{s.title}</h3>
+                <Link
+                  to="/services"
+                  className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-gold"
+                >
+                  تفاصيل أكثر <ArrowLeft className="h-3.5 w-3.5" />
+                </Link>
               </div>
             </div>
           ))}
