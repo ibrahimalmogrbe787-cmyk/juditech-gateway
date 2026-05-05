@@ -171,30 +171,21 @@ function HomePage() {
           </div>
         </div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <article
+            <div
               key={s.title}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:shadow-[var(--shadow-elegant)]"
+              className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-elegant)]"
             >
               <div className="absolute inset-x-0 top-0 h-1 origin-right scale-x-0 bg-[var(--gradient-gold)] transition-transform duration-500 group-hover:scale-x-100" />
-              <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-all duration-300 group-hover:bg-gold group-hover:text-gold-foreground">
-                <s.icon className="h-7 w-7" />
+              <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground transition-all duration-300 group-hover:bg-gold group-hover:text-gold-foreground">
+                <s.icon className="h-6 w-6" />
               </div>
-              <div className="mb-2 text-xs font-bold text-muted-foreground">{`0${i + 1}`}</div>
-              <h3 className="text-xl font-bold text-foreground">{s.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-              <div className="mt-4 flex items-start gap-2 rounded-lg border border-border bg-primary-soft/40 p-3">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gold" />
-                <span className="text-xs font-semibold text-foreground">{s.location}</span>
+              <div className="flex-1">
+                <div className="text-xs font-bold text-muted-foreground">{`0${i + 1}`}</div>
+                <h3 className="mt-0.5 text-lg font-bold text-foreground">{s.title}</h3>
               </div>
-              <Link
-                to="/services"
-                className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-gold"
-              >
-                تفاصيل أكثر <ArrowLeft className="h-4 w-4" />
-              </Link>
-            </article>
+            </div>
           ))}
         </div>
       </section>
