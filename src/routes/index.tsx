@@ -143,8 +143,10 @@ function HomePage() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <div
+            <Link
               key={s.title}
+              to="/services"
+              hash={s.hash}
               className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-elegant)]"
             >
               <div className="absolute inset-x-0 top-0 h-1 origin-right scale-x-0 bg-[var(--gradient-gold)] transition-transform duration-500 group-hover:scale-x-100" />
@@ -154,15 +156,19 @@ function HomePage() {
               <div className="flex-1">
                 <div className="text-xs font-bold text-muted-foreground">{`0${i + 1}`}</div>
                 <h3 className="mt-0.5 text-lg font-bold text-foreground">{s.title}</h3>
-                <Link
-                  to="/services"
-                  className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-gold"
-                >
-                  تفاصيل أكثر <ArrowLeft className="h-3.5 w-3.5" />
-                </Link>
               </div>
-            </div>
+              <ArrowLeft className="h-5 w-5 text-primary transition-transform group-hover:-translate-x-1" />
+            </Link>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-primary bg-card px-7 py-3 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+          >
+            عرض كل الخدمات بالتفصيل <ArrowLeft className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
