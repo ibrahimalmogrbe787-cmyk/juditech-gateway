@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
 import { Stethoscope, TestTubes, Languages, Fingerprint, Calculator, Wrench } from "lucide-react";
+import { useEffect } from "react";
+import { useLocation } from "@tanstack/react-router";
 import servicesHero from "@/assets/services-hero.jpg";
 
 export const Route = createFileRoute("/services")({
@@ -15,16 +17,160 @@ export const Route = createFileRoute("/services")({
   component: ServicesPage,
 });
 
-const services = [
-  { icon: Stethoscope, title: "الطب الشرعي", desc: "إجراء الفحوصات والتشريحات الطبية الشرعية لتحديد أسباب الوفاة وطبيعة الإصابات، وإصدار التقارير الطبية المعتمدة لدى المحاكم والنيابة العامة." },
-  { icon: TestTubes, title: "الكيمياء والسموم", desc: "تحليل العينات الكيميائية والبيولوجية للكشف عن المواد المخدرة والسموم والكحول، باستخدام أحدث الأجهزة المخبرية المعتمدة دولياً." },
-  { icon: Languages, title: "الترجمة القانونية والقضائية", desc: "ترجمة الوثائق القانونية والأحكام القضائية والعقود والمستندات الرسمية وتصديقها للسفارات والمحاكم والجهات الرسمية." },
-  { icon: Fingerprint, title: "الخبرة الجنائية", desc: "أبحاث التزييف والتزوير، فحص الأسلحة والذخائر، وتحليل آثار الحرائق والانفجارات ودراسة مسرح الجريمة." },
-  { icon: Calculator, title: "الخبرة الحسابية", desc: "تدقيق ومراجعة السجلات المالية والمحاسبية في القضايا التجارية والمصرفية والاختلاسات وتقدير الأضرار المالية." },
-  { icon: Wrench, title: "الخبرة الهندسية", desc: "خبرات هندسية معمارية ومدنية وكهربائية وميكانيكية وزراعية، تشمل تقييم الأضرار وفحص حوادث المرور والحرائق." },
+type Section = { title: string; intro?: string; items: string[] };
+
+const services: {
+  id: string;
+  icon: typeof Stethoscope;
+  title: string;
+  intro?: string;
+  items?: string[];
+  sections?: Section[];
+}[] = [
+  {
+    id: "forensic-medicine",
+    icon: Stethoscope,
+    title: "الطب الشرعي",
+    items: [
+      "تشريح الجثث لمعرفة أسباب الوفاة في الحالات الجنائية، وإجراء الكشف على الجثث المجهولة والأشلاء والعظام الآدمية للتعرف عليها.",
+      "إجراء الكشف على حالات الإصابات الجنائية أو إصابات العمل أو غيرها بناءً على طلب من الجهات المختصة بذلك، وتحديد نوعها وتاريخ حدوثها والأداة المستعملة فيها وتقدير المدة اللازمة لشفائها والآثار المترتبة عليها.",
+      "تقديم الخبرة في مجالات تحديد السن والعجز والأمراض العقلية وحالات البكارة وحالات الاتصال الجنسي، وتقديم الخبرة الفنية فيما يتعلق بحالات العجز الجنسي.",
+      "معاينة أماكن الحوادث الجنائية وفحص الملابس والأدوات والآثار المتعلقة بالجريمة وغير ذلك من الحالات التي تدخل ضمن اختصاص الطب الشرعي بناءً على تكليف من الجهات المختصة أو كلما اقتضت ظروف الواقعة ذلك.",
+      "أي أعمال أخرى تُسند للقسم بما يتماشى واختصاصاته.",
+    ],
+  },
+  {
+    id: "chemistry-toxicology",
+    icon: TestTubes,
+    title: "الكيمياء والسموم",
+    items: [
+      "تحليل عينات الدم والسوائل التي يُشتبه في احتوائها على الكحول وتحديد نسبة ذلك.",
+      "تحليل المواد والعينات التي يُشتبه في كونها مواد مخدرة أو مؤثرات عقلية وفقًا للجدول المرفق بقانون المخدرات والمؤثرات العقلية.",
+      "تحليل مخلفات المتفجرات واحتراق البارود وآثار الحرائق والتعرف على مكوناتها وتحديد مصدرها.",
+      "الكشف عن مخلفات احتراق البارود في الأسلحة النارية.",
+      "إجراء التحاليل للسوائل والمواد الأخرى لمعرفة مكوناتها ونسبتها إلى مرجعها.",
+      "تحليل العينات التي تُحال من أقسام الطب الشرعي لبيان مدى وجود سموم بها.",
+      "تحليل الأغذية التي يُشتبه في وجود مواد سامة بها.",
+      "تحليل المواد السائلة والصلبة مجهولة الهوية لبيان نوع العناصر الداخلة في تركيبها وتحديد مدى احتوائها على مواد سامة.",
+    ],
+  },
+  {
+    id: "translation",
+    icon: Languages,
+    title: "الترجمة (قانونية وقضائية)",
+    items: [
+      "أعمال الترجمة الفورية أمام المحاكم والنيابات والجهات الأخرى ذات العلاقة وذلك في الدعاوى التي بها أطراف أجنبية.",
+      "مراجعة واعتماد الترجمات الصادرة عن مكاتب الترجمة القانونية المعتمدة بليبيا.",
+      "ترجمة التقارير الطبية الصادرة عن قسم الطب الشرعي إلى اللغة العربية.",
+      "ترجمة التقارير الطبية الواردة من المحاكم والنيابات وكذلك المراسلات التي ترد إلى المركز من الجهات العامة.",
+    ],
+  },
+  {
+    id: "criminal-expertise",
+    icon: Fingerprint,
+    title: "الخبرة الجنائية",
+    sections: [
+      {
+        title: "أ — قسم الشؤون الإدارية ويختص بما يلي",
+        items: [
+          "القيام بأعمال البريد الوارد والصادر وأعمال المحفوظات ومسك السجلات اللازمة لذلك.",
+          "أعمال الطباعة والنسخ والتصوير.",
+          "الإشراف على الأرشيف الخاص بالإدارة وترتيب الملفات والمحافظة عليها.",
+        ],
+      },
+      {
+        title: "ب — قسم أبحاث التزييف والتزوير ويختص بما يلي",
+        items: [
+          "فحص المستندات والمحررات وكشف التزوير الواقع عليها.",
+          "فحص ومقارنة العملات الورقية والمعدنية وبيان صحتها والمزيف منها.",
+          "مضاهاة الخطوط اليدوية والتوقيعات.",
+          "مقارنة طبعات الأختام والبطاقات الممغنطة وبيان المزيف منها.",
+          "إظهار الكتابات على الأوراق المحترقة والكتابات غير المرئية (السرية).",
+          "دراسة ومقارنة أحرف الآلات الكاتبة لمعرفة نوعها وتحديد بصمتها.",
+          "تقدير العمر الزمني للورق والكتابة.",
+          "إجراء التحاليل على الأصباغ والأحبار والمواد الأخرى لمعرفة مكوناتها ونسبتها إلى مرجعها.",
+        ],
+      },
+      {
+        title: "ج — قسم فحص الأسلحة والذخائر والآلات ويختص بما يلي",
+        items: [
+          "فحص الأسلحة النارية والذخائر لبيان نوعها وعيارها وبلد تصنيعها ومدى صلاحيتها للاستعمال من عدمه.",
+          "فحص ومعاينة المقذوفات والأظرف الفارغة لمعرفة نوع السلاح المشتبه في استخدامه وتحديد مسافات الإطلاق وما يتعلق بالجوانب الفنية حولها.",
+          "فحص المركبات والآلات والأبواب والأقفال والخزائن المعتدى عليها لبيان نوع الاعتداء الواقع عليها وتحديد الأساليب المستعملة في ذلك.",
+        ],
+      },
+      {
+        title: "د — قسم فحص آثار الحرائق والانفجارات ويختص بما يلي",
+        items: [
+          "معاينة أماكن حوادث الحرائق والانفجارات لتحديد أسبابها.",
+          "رفع الآثار المادية الناجمة عن الحرائق لمعالجتها معملياً.",
+          "تقدير نسبة الأضرار الناجمة عن مختلف الحرائق.",
+        ],
+      },
+    ],
+  },
+  {
+    id: "accounting-expertise",
+    icon: Calculator,
+    title: "الخبرة الحسابية",
+    items: [
+      "فحص السجلات والمستندات في قضايا العجز المالي وتقدير قيمة العجز إن وجد.",
+      "فحص السجلات والمستندات في القضايا العمالية وبيان الحقوق العمالية وتحديدها وإثبات الفصل التعسفي إن وجد.",
+      "تقدير قيمة الموجودات وبيان الحقوق في قضايا الإرث وفقًا للفرائض الشرعية بالتعاون مع الأقسام ذات العلاقة.",
+      "فحص ومراجعة سجلات الشركات الأجنبية والوطنية لغرض تحديد الوعاء الضريبي وبيان وتحديد قيمة الضرائب المستحقة وفقًا لقوانين الضرائب المعمول بها في قضايا الطعون الضريبية.",
+      "تقدير قيمة المنقولات الثابتة والمنقولة والموجودات الأخرى من واقع السجلات والمستندات المتعلقة بها وذلك للوصول إلى تقدير قيمة العجز أو الأموال المختلسة أو ما في الذمة المالية.",
+    ],
+  },
+  {
+    id: "engineering-expertise",
+    icon: Wrench,
+    title: "قسم الخبرة الهندسية",
+    sections: [
+      {
+        title: "أ — وحدة الهندسة الإنشائية والمعمارية والكهربائية وتختص بما يلي",
+        items: [
+          "معاينة المباني وتقدير قيمتها وعمرها الزمني وتحديد نسبة ما تم فيها من أعمال وإعداد المواصفات والقياسات اللازمة لذلك.",
+          "تقدير قيمة الأضرار التي تلحق بالمباني وبيان أسبابها من الناحية الفنية وعلاقتها بالعوامل القريبة منها.",
+          "بيان مدى سلامة وصلاحية المباني للسكن من عدمه.",
+          "إعداد الرسومات المعمارية والإنشائية وغير ذلك من الأعمال الفنية الهندسية.",
+          "مساعدة المحضرين على تنفيذ الأحكام في القضايا ذات الطابع الهندسي بناءً على طلب جهة الاختصاص.",
+          "الكشف على الخطوط والشبكات الكهربائية وتحديد مصدر الخلل الفني فيها وتحديد الأضرار الناتجة عن ذلك.",
+          "تحديد المسؤولية الناجمة عن الأخطار الفنية الكهربائية.",
+          "تحديد الأضرار وعلاقتها بالمعدات الكهربائية.",
+          "تحديد نوع وقوة الآلات والأجهزة الكهربائية.",
+        ],
+      },
+      {
+        title: "ب — وحدة الهندسة المساحية وتختص بما يلي",
+        items: [
+          "مسح الأراضي داخل وخارج المخطط وإعداد الخرائط المساحية لها.",
+          "تثبيت الحدود على الطبيعة من واقع المخططات والخرائط المعتمدة.",
+          "إعداد مشاريع القسمة وفق الفرائض الشرعية وبيان الطرق بها.",
+          "التعامل مع الخرائط الجوية المتعلقة بالطابع المساحي وإجراء عملية الرفع المساحي من خلالها.",
+          "مساعدة المحضرين على تنفيذ الأحكام في القضايا ذات الطابع المساحي بناءً على طلب جهة الاختصاص.",
+        ],
+      },
+      {
+        title: "ج — وحدة الهندسة البيئية وتختص بما يلي",
+        items: ["تقديم الخبرة الفنية في قضايا البيئة والتلوث."],
+      },
+    ],
+  },
 ];
 
 function ServicesPage() {
+  const location = useLocation();
+
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      const el = document.getElementById(hash.replace("#", ""));
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: "smooth", block: "start" }), 100);
+      }
+    }
+  }, [location.hash]);
+
   return (
     <>
       <PageHeader
@@ -34,22 +180,72 @@ function ServicesPage() {
         image={servicesHero}
       />
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap gap-2">
           {services.map((s) => (
-            <article
-              key={s.title}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-card)] transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-elegant)]"
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-bold text-foreground transition-colors hover:border-primary/40 hover:bg-primary-soft/40 hover:text-primary"
             >
-              <div className="absolute inset-x-0 top-0 h-1 origin-right scale-x-0 bg-[var(--gradient-gold)] transition-transform group-hover:scale-x-100" />
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary-soft text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
-                <s.icon className="h-6 w-6" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-            </article>
+              <s.icon className="h-4 w-4 text-primary" />
+              {s.title}
+            </a>
           ))}
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl space-y-8 px-4 pb-16 sm:px-6 lg:px-8">
+        {services.map((s, i) => (
+          <article
+            key={s.id}
+            id={s.id}
+            className="scroll-mt-24 overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-card)]"
+          >
+            <div className="flex flex-col gap-4 border-b border-border bg-primary-soft/40 p-6 sm:flex-row sm:items-center sm:gap-6 sm:p-8">
+              <div className="inline-flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-md">
+                <s.icon className="h-7 w-7" />
+              </div>
+              <div className="flex-1">
+                <div className="text-xs font-bold text-muted-foreground">{`القسم 0${i + 1}`}</div>
+                <h2 className="mt-1 text-2xl font-extrabold text-foreground sm:text-3xl">{s.title}</h2>
+                <div className="mt-2 h-1 w-16 rounded-full bg-gold" />
+              </div>
+            </div>
+
+            <div className="space-y-6 p-6 sm:p-8">
+              {s.items && (
+                <ol className="space-y-3">
+                  {s.items.map((item, idx) => (
+                    <li key={idx} className="flex gap-3 rounded-xl border border-border bg-background p-4">
+                      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-gold text-sm font-bold text-gold-foreground">
+                        {idx + 1}
+                      </span>
+                      <p className="text-sm leading-loose text-foreground sm:text-base">{item}</p>
+                    </li>
+                  ))}
+                </ol>
+              )}
+
+              {s.sections &&
+                s.sections.map((sec, sIdx) => (
+                  <div key={sIdx} className="rounded-2xl border border-border bg-primary-soft/30 p-5 sm:p-6">
+                    <h3 className="text-lg font-bold text-primary sm:text-xl">{sec.title}</h3>
+                    <ol className="mt-4 space-y-2.5">
+                      {sec.items.map((item, idx) => (
+                        <li key={idx} className="flex gap-3 rounded-lg bg-background p-3.5">
+                          <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                            {idx + 1}
+                          </span>
+                          <p className="text-sm leading-loose text-foreground">{item}</p>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+                ))}
+            </div>
+          </article>
+        ))}
       </section>
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">

@@ -29,42 +29,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  {
-    icon: Stethoscope,
-    title: "الطب الشرعي",
-    desc: "إجراء الفحوصات والتشريحات الطبية الشرعية لتحديد أسباب الوفاة وطبيعة الإصابات وتاريخ حدوثها، وفحص المصابين والجناة، وإصدار التقارير الطبية المعتمدة لدى المحاكم والنيابة العامة وفقاً للأصول العلمية والقانونية المعمول بها.",
-    location: "المقر الرئيسي — طرابلس / فروع: الزاوية، بوسليم، تاجوراء",
-  },
-  {
-    icon: TestTubes,
-    title: "الكيمياء والسموم",
-    desc: "تحليل العينات الكيميائية والبيولوجية للكشف عن المواد المخدرة والسموم والكحول والمواد المجهولة في عينات الدم والأنسجة، باستخدام أحدث الأجهزة المخبرية المعتمدة دولياً، وإصدار تقارير فنية تدعم التحقيقات الجنائية.",
-    location: "المختبر المركزي — مركز الخبرة القضائية، طرابلس",
-  },
-  {
-    icon: Languages,
-    title: "الترجمة القانونية والقضائية",
-    desc: "ترجمة الوثائق القانونية والأحكام القضائية والعقود والمستندات الرسمية من وإلى مختلف اللغات، والتصديق عليها لاعتمادها لدى السفارات والمحاكم والجهات الرسمية داخل ليبيا وخارجها.",
-    location: "قسم الترجمة المعتمدة — المقر الرئيسي بطرابلس",
-  },
-  {
-    icon: Fingerprint,
-    title: "الخبرة الجنائية",
-    desc: "أبحاث التزييف والتزوير في الوثائق والعملات والتواقيع، وفحص الأسلحة النارية والذخائر، وتحليل آثار الحرائق والانفجارات، ودراسة مسرح الجريمة وجمع الأدلة المادية وتوثيقها بالطرق العلمية الحديثة.",
-    location: "إدارة الأدلة الجنائية — طرابلس",
-  },
-  {
-    icon: Calculator,
-    title: "الخبرة الحسابية",
-    desc: "تدقيق ومراجعة السجلات المالية والمحاسبية في القضايا التجارية والمصرفية والاختلاسات وغسيل الأموال، وإعداد التقارير الحسابية المتخصصة وتقدير الأضرار المالية بدقةٍ تامةٍ بما يخدم العدالة.",
-    location: "قسم الخبرة المالية والمحاسبية — طرابلس",
-  },
-  {
-    icon: Wrench,
-    title: "الخبرة الهندسية",
-    desc: "خبرات هندسية معمارية ومدنية وكهربائية وميكانيكية وزراعية، تشمل تقييم الأضرار في المباني والمنشآت، وفحص حوادث المرور والحرائق الكهربائية، وإعداد التقارير الفنية الهندسية للجهات القضائية.",
-    location: "إدارة الخبرة الهندسية — طرابلس",
-  },
+  { icon: Stethoscope, title: "الطب الشرعي", hash: "forensic-medicine" },
+  { icon: TestTubes, title: "الكيمياء والسموم", hash: "chemistry-toxicology" },
+  { icon: Languages, title: "الترجمة (قانونية وقضائية)", hash: "translation" },
+  { icon: Fingerprint, title: "الخبرة الجنائية", hash: "criminal-expertise" },
+  { icon: Calculator, title: "الخبرة الحسابية", hash: "accounting-expertise" },
+  { icon: Wrench, title: "قسم الخبرة الهندسية", hash: "engineering-expertise" },
 ];
 
 function HomePage() {
@@ -173,8 +143,10 @@ function HomePage() {
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s, i) => (
-            <div
+            <Link
               key={s.title}
+              to="/services"
+              hash={s.hash}
               className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-[var(--shadow-card)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[var(--shadow-elegant)]"
             >
               <div className="absolute inset-x-0 top-0 h-1 origin-right scale-x-0 bg-[var(--gradient-gold)] transition-transform duration-500 group-hover:scale-x-100" />
@@ -184,15 +156,19 @@ function HomePage() {
               <div className="flex-1">
                 <div className="text-xs font-bold text-muted-foreground">{`0${i + 1}`}</div>
                 <h3 className="mt-0.5 text-lg font-bold text-foreground">{s.title}</h3>
-                <Link
-                  to="/services"
-                  className="mt-2 inline-flex items-center gap-1 text-xs font-semibold text-primary transition-colors hover:text-gold"
-                >
-                  تفاصيل أكثر <ArrowLeft className="h-3.5 w-3.5" />
-                </Link>
               </div>
-            </div>
+              <ArrowLeft className="h-5 w-5 text-primary transition-transform group-hover:-translate-x-1" />
+            </Link>
           ))}
+        </div>
+
+        <div className="mt-10 text-center">
+          <Link
+            to="/services"
+            className="inline-flex items-center gap-2 rounded-lg border-2 border-primary bg-card px-7 py-3 text-sm font-bold text-primary transition-all hover:bg-primary hover:text-primary-foreground"
+          >
+            عرض كل الخدمات بالتفصيل <ArrowLeft className="h-4 w-4" />
+          </Link>
         </div>
       </section>
 
