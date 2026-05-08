@@ -248,6 +248,9 @@ function ServicesPage() {
             </div>
 
             <div className="space-y-6 p-6 sm:p-8">
+              {s.intro && (
+                <p className="text-base leading-loose text-muted-foreground">{s.intro}</p>
+              )}
               {s.items && (
                 <ol className="space-y-3">
                   {s.items.map((item, idx) => (
