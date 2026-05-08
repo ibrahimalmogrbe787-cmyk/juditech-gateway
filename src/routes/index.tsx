@@ -6,6 +6,8 @@ import {
   Fingerprint,
   Calculator,
   Wrench,
+  ClipboardList,
+  BookOpen,
   ArrowLeft,
   ShieldCheck,
   Clock,
@@ -35,6 +37,8 @@ const services = [
   { icon: Fingerprint, title: "الخبرة الجنائية", hash: "criminal-expertise" },
   { icon: Calculator, title: "الخبرة الحسابية", hash: "accounting-expertise" },
   { icon: Wrench, title: "قسم الخبرة الهندسية", hash: "engineering-expertise" },
+  { icon: ClipboardList, title: "الخطط والتقارير", hash: "plans-reports" },
+  { icon: BookOpen, title: "البحوث والدراسات", hash: "research-studies" },
 ];
 
 function HomePage() {
