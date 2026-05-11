@@ -127,7 +127,7 @@ function AboutPage() {
 
               <p className="text-center text-xl font-bold text-primary">قررت</p>
 
-              {[
+              {([
                 {
                   title: "الفصل الأول — الإنشاء والاختصاصات",
                   arts: [
@@ -195,7 +195,7 @@ function AboutPage() {
                     { n: "مادة 15", t: "يعمل بهذا القرار من تاريخ صدوره، وينشر في مدونة الإجراءات." },
                   ],
                 },
-              ].map((ch) => (
+              ] as Array<{ title: string; arts: Array<{ n: string; t: string; list?: string[] }> }>).map((ch) => (
                 <details key={ch.title} className="group rounded-2xl border border-border bg-primary-soft/30 p-5 sm:p-6">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold text-primary sm:text-xl">
                     <span>{ch.title}</span>
@@ -425,7 +425,7 @@ function AboutPage() {
             </div>
 
             <div className="relative mt-10 space-y-6 text-right text-base leading-loose text-foreground">
-              {[
+              {([
                 {
                   title: "الفصل الأول — التعاقد على شغل الوظائف",
                   arts: [
@@ -614,7 +614,7 @@ function AboutPage() {
                     { n: "مادة 48", t: "تسري أحكام القانون رقم (12) لسنة 2010م بشأن إصدار قانون علاقات العمل والقانون رقم (13) لسنة 1980م بشأن الضمان الاجتماعي وتعديلاتهما واللوائح الصادرة بمقتضاهما فيما لم يرد بشأنهما نص في هذه اللائحة، ويلغى كل حكم يخالف ذلك." },
                   ],
                 },
-              ].map((ch) => (
+              ] as Array<{ title: string; arts: Array<{ n: string; t: string; list?: string[] }> }>).map((ch) => (
                 <details key={ch.title} className="group rounded-2xl border border-border bg-background/50 p-5 sm:p-6">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-bold text-primary sm:text-xl">
                     <span>{ch.title}</span>
