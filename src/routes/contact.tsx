@@ -23,7 +23,7 @@ function ContactPage() {
     <>
       <PageHeader
         eyebrow="اتصل بنا"
-        title="قنوات التواصل الرسمية"
+        title="تواصل معنا"
         subtitle="يمكن للجهات القضائية والرسمية والأفراد التواصل مع المركز خلال أوقات العمل الرسمية."
         image={contactHero}
       />
