@@ -127,7 +127,7 @@ function AboutPage() {
 
               <p className="text-center text-xl font-bold text-primary">قررت</p>
 
-              {([
+              {[
                 {
                   title: "الفصل الأول — الإنشاء والاختصاصات",
                   arts: [
@@ -425,7 +425,7 @@ function AboutPage() {
             </div>
 
             <div className="relative mt-10 space-y-6 text-right text-base leading-loose text-foreground">
-              {([
+              {[
                 {
                   title: "الفصل الأول — التعاقد على شغل الوظائف",
                   arts: [
