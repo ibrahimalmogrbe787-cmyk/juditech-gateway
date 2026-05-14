@@ -158,14 +158,14 @@ function HomePage() {
                     className="h-auto w-full object-cover"
                   />
                 </div>
-                <div className="mt-5 text-center">
-                  <div className="inline-block rounded-full bg-gold/20 px-3 py-1 text-xs font-bold text-gold ring-1 ring-gold/40">
+                <div className="mt-5 rounded-2xl bg-primary-foreground/95 p-4 text-center shadow-lg ring-1 ring-gold/40 backdrop-blur">
+                  <div className="inline-block rounded-full bg-gold px-3 py-1 text-xs font-extrabold text-gold-foreground shadow">
                     رئيس المركز
                   </div>
-                  <div className="mt-3 text-lg font-bold text-primary-foreground">
+                  <div className="mt-3 text-lg font-extrabold text-primary">
                     المستشار / خالد أبوعجيلة ذياب
                   </div>
-                  <div className="mt-1 text-xs text-primary-foreground/80">
+                  <div className="mt-1 text-sm font-semibold text-foreground">
                     مركز الخبرة القضائية والبحوث
                   </div>
                 </div>
