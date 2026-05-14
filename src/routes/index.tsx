@@ -18,6 +18,7 @@ import {
 import heroImg from "@/assets/hero-forensic.jpg";
 import logo from "@/assets/logo.jpeg";
 import directorImg from "@/assets/director.jpg";
+import contactCtaImg from "@/assets/contact-cta.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
