@@ -128,6 +128,83 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Director's Word */}
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="mb-10 text-center">
+          <div className="text-sm font-bold uppercase tracking-wider text-primary">رسالة من الإدارة</div>
+          <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">كلمة رئيس المركز</h2>
+          <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
+        </div>
+
+        <div className="relative overflow-hidden rounded-3xl border border-border bg-card shadow-[var(--shadow-elegant)]">
+          <div className="absolute -left-24 -top-24 h-64 w-64 rounded-full bg-gold/10 blur-3xl" />
+          <div className="absolute -bottom-24 -right-24 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+
+          <div className="relative grid gap-0 lg:grid-cols-[minmax(0,360px)_1fr]">
+            {/* Portrait */}
+            <div className="relative bg-[var(--gradient-hero)] p-6 sm:p-8 lg:p-10">
+              <div className="absolute inset-0 opacity-30" style={{
+                backgroundImage: "radial-gradient(circle at 30% 30%, oklch(0.82 0.15 90 / 0.5), transparent 60%)",
+              }} />
+              <div className="relative mx-auto max-w-xs">
+                <div className="absolute -inset-3 rounded-2xl bg-gold/20 blur-xl" />
+                <div className="relative overflow-hidden rounded-2xl border-2 border-gold/40 shadow-2xl">
+                  <img
+                    src={directorImg}
+                    alt="المستشار خالد أبوعجيلة ذياب — رئيس مركز الخبرة القضائية والبحوث"
+                    width={720}
+                    height={960}
+                    className="h-auto w-full object-cover"
+                  />
+                </div>
+                <div className="mt-5 text-center">
+                  <div className="inline-block rounded-full bg-gold/20 px-3 py-1 text-xs font-bold text-gold ring-1 ring-gold/40">
+                    رئيس المركز
+                  </div>
+                  <div className="mt-3 text-lg font-bold text-primary-foreground">
+                    المستشار / خالد أبوعجيلة ذياب
+                  </div>
+                  <div className="mt-1 text-xs text-primary-foreground/80">
+                    مركز الخبرة القضائية والبحوث
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Message */}
+            <div className="relative p-6 sm:p-10 lg:p-12">
+              <div className="absolute right-6 top-6 font-serif text-7xl leading-none text-gold/30 sm:text-8xl">”</div>
+              <div className="relative">
+                <p className="text-base leading-loose text-foreground sm:text-lg">
+                  بسم الله الرحمن الرحيم، والصلاة والسلام على أشرف المرسلين سيدنا محمد وعلى آله وصحبه أجمعين.
+                </p>
+                <p className="mt-5 text-base leading-loose text-muted-foreground sm:text-lg">
+                  يسعدني أن أرحّب بكم في الموقع الرسمي لمركز الخبرة القضائية والبحوث، الجهة الفنية المتخصصة
+                  المعتمدة لدى السلطة القضائية في تقديم أعمال الخبرة والطب الشرعي والتحاليل والبحوث، خدمةً
+                  للعدالة وصوناً للحقوق.
+                </p>
+                <p className="mt-5 text-base leading-loose text-muted-foreground sm:text-lg">
+                  نعمل في المركز وفق منهجية علمية دقيقة وكوادر مؤهلة ومختبرات متطورة، ملتزمين بأعلى معايير
+                  النزاهة والمهنية والحياد، إيماناً منا بأن دقة التقرير الفني ركيزة أساسية في تحقيق العدالة
+                  وترسيخ ثقة المجتمع بالقضاء.
+                </p>
+                <p className="mt-5 text-base leading-loose text-muted-foreground sm:text-lg">
+                  ونؤكد استمرارنا في تطوير قدراتنا المؤسسية والتنظيمية والمهنية، بما يخدم المنظومة القضائية
+                  ويواكب المستجدات العلمية والتقنية الحديثة.
+                </p>
+                <div className="mt-8 flex items-center justify-end gap-3">
+                  <div className="h-px flex-1 bg-gradient-to-l from-gold/40 to-transparent" />
+                  <div className="text-sm font-bold text-primary">
+                    رئيس المركز — المستشار / خالد أبوعجيلة ذياب
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="h-1 w-full bg-[var(--gradient-gold)]" />
+        </div>
+      </section>
+
       {/* Core Services */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
