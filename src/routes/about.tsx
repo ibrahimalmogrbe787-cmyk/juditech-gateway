@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
-import { CheckCircle2, Target, Eye, Award, Gavel, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Target, Eye, Award, ShieldCheck } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
+import centerLogo from "@/assets/logo.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
