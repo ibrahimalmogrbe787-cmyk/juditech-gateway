@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/PageHeader";
-import { CheckCircle2, Target, Eye, Award, Gavel, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Target, Eye, Award, ShieldCheck } from "lucide-react";
 import aboutHero from "@/assets/about-hero.jpg";
+import centerLogo from "@/assets/logo.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -92,8 +93,8 @@ function AboutPage() {
             <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
             <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
             <div className="relative flex flex-col items-center gap-5 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
-                <Gavel className="h-8 w-8" />
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold/60 bg-card p-1 shadow-lg animate-pulse-ring">
+                <img src={centerLogo} alt="شعار مركز الخبرة القضائية والبحوث" width={80} height={80} className="h-full w-full rounded-full object-contain" />
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary">
                 <ShieldCheck className="h-3.5 w-3.5" /> الاختصاص الحصري
@@ -233,8 +234,8 @@ function AboutPage() {
             <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
             <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
             <div className="relative flex flex-col items-center gap-5 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
-                <Gavel className="h-8 w-8" />
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold/60 bg-card p-1 shadow-lg animate-pulse-ring">
+                <img src={centerLogo} alt="شعار مركز الخبرة القضائية والبحوث" width={80} height={80} className="h-full w-full rounded-full object-contain" />
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary">
                 <ShieldCheck className="h-3.5 w-3.5" /> الاختصاص الحصري
@@ -409,8 +410,8 @@ function AboutPage() {
             <div className="absolute -left-16 -top-16 h-56 w-56 rounded-full bg-gold/20 blur-3xl" />
             <div className="absolute -bottom-16 -right-16 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
             <div className="relative flex flex-col items-center gap-5 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
-                <Gavel className="h-8 w-8" />
+              <div className="relative flex h-20 w-20 items-center justify-center rounded-full border-2 border-gold/60 bg-card p-1 shadow-lg animate-pulse-ring">
+                <img src={centerLogo} alt="شعار مركز الخبرة القضائية والبحوث" width={80} height={80} className="h-full w-full rounded-full object-contain" />
               </div>
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-bold text-primary">
                 <ShieldCheck className="h-3.5 w-3.5" /> الاختصاص الحصري
@@ -648,19 +649,23 @@ function AboutPage() {
 
       <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-5 lg:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-primary-soft/50 p-7">
-            <Target className="h-9 w-9 text-primary" />
-            <h3 className="mt-4 text-xl font-bold text-foreground">رسالتنا</h3>
-            <div className="mt-2 h-1 w-12 rounded-full bg-gold" />
-            <p className="mt-4 text-sm leading-loose text-muted-foreground">
+          <div className="group relative overflow-hidden rounded-2xl border border-border bg-primary-soft/50 p-7 transition-all duration-500 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[var(--shadow-elegant)]">
+            <div className="absolute inset-x-0 top-0 h-px animate-shimmer" />
+            <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/10 blur-2xl transition-all duration-500 group-hover:bg-primary/20" />
+            <Target className="relative h-9 w-9 text-primary animate-float-soft" />
+            <h3 className="relative mt-4 text-xl font-bold text-foreground">رسالتنا</h3>
+            <div className="relative mt-2 h-1 w-12 origin-right rounded-full bg-gold transition-all duration-500 group-hover:w-24" />
+            <p className="relative mt-4 text-sm leading-loose text-muted-foreground">
               تقديم خبرة قضائية متخصصة وموثوقة في مختلف المجالات من خلال كوادر مؤهلة ودراسات تطبيقية.
             </p>
           </div>
-          <div className="rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-card)]">
-            <Eye className="h-9 w-9 text-gold" />
-            <h3 className="mt-4 text-xl font-bold text-foreground">رؤيتنا</h3>
-            <div className="mt-2 h-1 w-12 rounded-full bg-gold" />
-            <p className="mt-4 text-sm leading-loose text-muted-foreground">
+          <div className="group relative overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1 hover:border-gold/40 hover:shadow-[var(--shadow-elegant)]">
+            <div className="absolute inset-x-0 top-0 h-px animate-shimmer" />
+            <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gold/10 blur-2xl transition-all duration-500 group-hover:bg-gold/25" />
+            <Eye className="relative h-9 w-9 text-gold animate-float-soft" style={{ animationDelay: "0.6s" }} />
+            <h3 className="relative mt-4 text-xl font-bold text-foreground">رؤيتنا</h3>
+            <div className="relative mt-2 h-1 w-12 origin-right rounded-full bg-gold transition-all duration-500 group-hover:w-24" />
+            <p className="relative mt-4 text-sm leading-loose text-muted-foreground">
               أن يكون المركز المرجعية الوطنية الأولى في مجال الخبرة القضائية والبحوث، ويُسهم في
               تعزيز ثقة المواطن في القضاء عبر ثقة القضاء في تقارير الخبراء.
             </p>
@@ -672,7 +677,7 @@ function AboutPage() {
       <section className="bg-primary-soft/40 py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <Award className="mx-auto h-10 w-10 text-primary" />
+            <Award className="mx-auto h-10 w-10 text-primary animate-float-soft" />
             <div className="mt-3 text-sm font-bold uppercase tracking-wider text-primary">قيمنا</div>
             <h2 className="mt-2 text-3xl font-bold text-foreground">المبادئ التي يقوم عليها عمل المركز</h2>
             <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
@@ -681,13 +686,16 @@ function AboutPage() {
             </p>
           </div>
           <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {values.map((v) => (
+            {values.map((v, i) => (
               <li
                 key={v}
-                className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-5 text-center shadow-[var(--shadow-card)]"
+                style={{ animationDelay: `${i * 0.12}s` }}
+                className="group relative flex flex-col items-center gap-3 overflow-hidden rounded-xl border border-border bg-card p-5 text-center shadow-[var(--shadow-card)] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold/50 hover:shadow-[var(--shadow-elegant)]"
               >
-                <CheckCircle2 className="h-7 w-7 text-gold" />
-                <span className="text-sm font-bold leading-relaxed text-foreground">{v}</span>
+                <div className="absolute inset-x-0 top-0 h-px scale-x-0 bg-[var(--gradient-gold)] transition-transform duration-500 group-hover:scale-x-100" />
+                <div className="absolute inset-0 -translate-x-full bg-gradient-to-l from-transparent via-gold/10 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+                <CheckCircle2 className="relative h-7 w-7 text-gold transition-transform duration-500 group-hover:scale-125 group-hover:rotate-6" />
+                <span className="relative text-sm font-bold leading-relaxed text-foreground">{v}</span>
               </li>
             ))}
           </ul>
