@@ -309,23 +309,42 @@ function HomePage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border-2 border-primary/20 bg-card px-8 py-14 text-center shadow-[var(--shadow-elegant)] sm:px-12">
-          <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-gold/15 blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
-          <Building2 className="relative mx-auto h-12 w-12 text-primary" />
-          <h2 className="relative mt-4 text-2xl font-extrabold text-primary sm:text-3xl">
-            للتواصل الرسمي مع المركز
-          </h2>
-          <div className="relative mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
-          <p className="relative mx-auto mt-4 max-w-2xl font-medium text-foreground">
-            يمكن للجهات القضائية والرسمية التواصل مع المركز خلال أوقات العمل الرسمية.
-          </p>
-          <Link
-            to="/contact"
-            className="relative mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5"
-          >
-            تواصل معنا <ArrowLeft className="h-4 w-4" />
-          </Link>
+        <div className="relative overflow-hidden rounded-3xl border-2 border-primary/20 shadow-[var(--shadow-elegant)]">
+          <div className="grid gap-0 lg:grid-cols-2">
+            {/* Image side */}
+            <div className="relative min-h-[260px] lg:min-h-full">
+              <img
+                src={contactCtaImg}
+                alt="مقر مركز الخبرة القضائية والبحوث"
+                width={1600}
+                height={900}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-card via-card/40 to-transparent" />
+              <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-30" />
+            </div>
+
+            {/* Text side */}
+            <div className="relative bg-card px-8 py-14 text-center sm:px-12">
+              <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-gold/15 blur-3xl" />
+              <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
+              <Building2 className="relative mx-auto h-12 w-12 text-primary" />
+              <h2 className="relative mt-4 text-2xl font-extrabold text-primary sm:text-3xl">
+                للتواصل الرسمي مع المركز
+              </h2>
+              <div className="relative mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
+              <p className="relative mx-auto mt-4 max-w-2xl font-medium text-foreground">
+                يمكن للجهات القضائية والرسمية التواصل مع المركز خلال أوقات العمل الرسمية.
+              </p>
+              <Link
+                to="/contact"
+                className="relative mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5"
+              >
+                تواصل معنا <ArrowLeft className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
