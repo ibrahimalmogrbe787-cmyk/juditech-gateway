@@ -115,17 +115,26 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-4 rounded-xl border border-border bg-primary-soft/40 p-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground">
+          <a
+            href="https://maps.app.goo.gl/NkETih22YtgY8JtD7?g_st=ic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-4 rounded-xl border border-border bg-primary-soft/40 p-4 transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-[var(--shadow-elegant)]"
+          >
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground transition-transform group-hover:scale-110">
               <MapPin className="h-6 w-6" />
             </div>
-            <div>
+            <div className="flex-1">
               <div className="text-xs font-bold text-muted-foreground">المقر الرسمي</div>
               <div className="text-sm font-bold text-foreground sm:text-base">
                 الظهرة — طرابلس، بجانب فندق الودان
               </div>
+              <div className="mt-1 inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-gold">
+                عرض الموقع على خرائط Google
+                <ExternalLink className="h-3 w-3" />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
