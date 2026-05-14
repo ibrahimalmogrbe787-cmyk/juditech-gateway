@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero-forensic.jpg";
 import logo from "@/assets/logo.jpeg";
+import directorImg from "@/assets/director.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
