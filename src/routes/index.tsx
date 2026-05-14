@@ -18,6 +18,7 @@ import {
 import heroImg from "@/assets/hero-forensic.jpg";
 import logo from "@/assets/logo.jpeg";
 import directorImg from "@/assets/director.jpg";
+import contactCtaImg from "@/assets/contact-cta.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,17 +115,26 @@ function HomePage() {
               </div>
             </div>
           </div>
-          <div className="flex items-center gap-4 rounded-xl border border-border bg-primary-soft/40 p-4">
-            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground">
+          <a
+            href="https://maps.app.goo.gl/NkETih22YtgY8JtD7?g_st=ic"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-center gap-4 rounded-xl border border-border bg-primary-soft/40 p-4 transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-[var(--shadow-elegant)]"
+          >
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gold text-gold-foreground transition-transform group-hover:scale-110">
               <MapPin className="h-6 w-6" />
             </div>
-            <div>
+            <div className="flex-1">
               <div className="text-xs font-bold text-muted-foreground">المقر الرسمي</div>
               <div className="text-sm font-bold text-foreground sm:text-base">
                 الظهرة — طرابلس، بجانب فندق الودان
               </div>
+              <div className="mt-1 inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-gold">
+                عرض الموقع على خرائط Google
+                <ExternalLink className="h-3 w-3" />
+              </div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
@@ -157,14 +167,14 @@ function HomePage() {
                     className="h-auto w-full object-cover"
                   />
                 </div>
-                <div className="mt-5 text-center">
-                  <div className="inline-block rounded-full bg-gold/20 px-3 py-1 text-xs font-bold text-gold ring-1 ring-gold/40">
+                <div className="mt-5 rounded-2xl bg-primary-foreground/95 p-4 text-center shadow-lg ring-1 ring-gold/40 backdrop-blur">
+                  <div className="inline-block rounded-full bg-gold px-3 py-1 text-xs font-extrabold text-gold-foreground shadow">
                     رئيس المركز
                   </div>
-                  <div className="mt-3 text-lg font-bold text-primary-foreground">
+                  <div className="mt-3 text-lg font-extrabold text-primary">
                     المستشار / خالد أبوعجيلة ذياب
                   </div>
-                  <div className="mt-1 text-xs text-primary-foreground/80">
+                  <div className="mt-1 text-sm font-semibold text-foreground">
                     مركز الخبرة القضائية والبحوث
                   </div>
                 </div>
@@ -299,23 +309,42 @@ function HomePage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border-2 border-primary/20 bg-card px-8 py-14 text-center shadow-[var(--shadow-elegant)] sm:px-12">
-          <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-gold/15 blur-3xl" />
-          <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
-          <Building2 className="relative mx-auto h-12 w-12 text-primary" />
-          <h2 className="relative mt-4 text-2xl font-extrabold text-primary sm:text-3xl">
-            للتواصل الرسمي مع المركز
-          </h2>
-          <div className="relative mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
-          <p className="relative mx-auto mt-4 max-w-2xl font-medium text-foreground">
-            يمكن للجهات القضائية والرسمية التواصل مع المركز خلال أوقات العمل الرسمية.
-          </p>
-          <Link
-            to="/contact"
-            className="relative mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5"
-          >
-            تواصل معنا <ArrowLeft className="h-4 w-4" />
-          </Link>
+        <div className="relative overflow-hidden rounded-3xl border-2 border-primary/20 shadow-[var(--shadow-elegant)]">
+          <div className="grid gap-0 lg:grid-cols-2">
+            {/* Image side */}
+            <div className="relative min-h-[260px] lg:min-h-full">
+              <img
+                src={contactCtaImg}
+                alt="مقر مركز الخبرة القضائية والبحوث"
+                width={1600}
+                height={900}
+                loading="lazy"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-l from-card via-card/40 to-transparent" />
+              <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-30" />
+            </div>
+
+            {/* Text side */}
+            <div className="relative bg-card px-8 py-14 text-center sm:px-12">
+              <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-gold/15 blur-3xl" />
+              <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full bg-primary/10 blur-3xl" />
+              <Building2 className="relative mx-auto h-12 w-12 text-primary" />
+              <h2 className="relative mt-4 text-2xl font-extrabold text-primary sm:text-3xl">
+                للتواصل الرسمي مع المركز
+              </h2>
+              <div className="relative mx-auto mt-3 h-1 w-20 rounded-full bg-gold" />
+              <p className="relative mx-auto mt-4 max-w-2xl font-medium text-foreground">
+                يمكن للجهات القضائية والرسمية التواصل مع المركز خلال أوقات العمل الرسمية.
+              </p>
+              <Link
+                to="/contact"
+                className="relative mt-6 inline-flex items-center gap-2 rounded-lg bg-primary px-7 py-3 text-sm font-bold text-primary-foreground shadow-lg transition-transform hover:-translate-y-0.5"
+              >
+                تواصل معنا <ArrowLeft className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
