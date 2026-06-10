@@ -6,8 +6,8 @@ import logo from "@/assets/logo.jpeg";
 const nav = [
   { to: "/", label: "الرئيسية" },
   { to: "/about", label: "من نحن" },
-  
   { to: "/services", label: "الخدمات" },
+  { to: "/crime-punishment", label: "الجريمة و العقاب" },
   { to: "/contact", label: "اتصل بنا" },
 ] as const;
 
